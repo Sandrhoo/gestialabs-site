@@ -956,6 +956,10 @@
 
   .booking-label:not(:first-child){margin-top:24px;}
 
+  .day-chips-wrap{
+    position:relative;
+  }
+
   .day-chips{
     display:flex;
     gap:10px;
@@ -1268,8 +1272,25 @@
       opacity:1;
     }
     .nav-right .btn-small{display:none;}
-    .menu-toggle{display:flex;}
+    .menu-toggle{display:flex;padding:14px;}
     .price-row{gap:28px;}
+
+    /* Larger tap targets on touch screens */
+    .day-chip{padding:13px 18px;}
+    .slot-btn{padding:13px 8px;}
+    .social-icon{width:44px;height:44px;}
+
+    /* Scroll-affordance hint on the horizontally scrolling day strip */
+    .day-chips-wrap::after{
+      content:'';
+      position:absolute;
+      top:0;
+      right:0;
+      bottom:6px;
+      width:28px;
+      background:linear-gradient(to right, rgba(255,255,255,0), var(--card));
+      pointer-events:none;
+    }
   }
 
   @media (max-width:560px){
@@ -1660,7 +1681,9 @@
 
           <div class="booking-step" id="bookingPicker" hidden>
             <p class="booking-label">Scegli un giorno</p>
-            <div class="day-chips" id="dayChips"></div>
+            <div class="day-chips-wrap">
+              <div class="day-chips" id="dayChips"></div>
+            </div>
             <p class="booking-label">Scegli un orario</p>
             <div class="slot-grid" id="slotGrid"></div>
           </div>
