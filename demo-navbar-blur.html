@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Demo — Navbar blur on scroll</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Hanken+Grotesque:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --terracotta:#C0432A;
+    --gold:#F4A72E;
+    --cream:#FDF6EC;
+    --dark:#3A2418;
+    --border: rgba(58,36,24,0.10);
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{
+    font-family:'Hanken Grotesque', -apple-system, sans-serif;
+    background:var(--cream);
+    color:var(--dark);
+    line-height:1.6;
+  }
+  h1{font-family:'Fraunces',Georgia,serif;font-weight:600;}
+
+  /* ---------- NOTE BANNER (demo only, not part of the real site) ---------- */
+  .demo-note{
+    background:var(--dark);
+    color:#FDF6EC;
+    text-align:center;
+    padding:10px 16px;
+    font-size:13.5px;
+    font-weight:600;
+  }
+
+  /* ---------- HEADER: this is the part being proposed ---------- */
+  header{
+    position:sticky;
+    top:0;
+    z-index:100;
+    background:transparent;
+    backdrop-filter:blur(0px);
+    -webkit-backdrop-filter:blur(0px);
+    border-bottom:1px solid transparent;
+    box-shadow:0 0 0 rgba(58,36,24,0);
+    transition:background 0.35s ease, backdrop-filter 0.35s ease, -webkit-backdrop-filter 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
+  }
+
+  header.scrolled{
+    background:rgba(253,246,236,0.78);
+    backdrop-filter:blur(14px);
+    -webkit-backdrop-filter:blur(14px);
+    border-bottom:1px solid var(--border);
+    box-shadow:0 8px 24px rgba(58,36,24,0.06);
+  }
+
+  .nav-wrap{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:16px 24px;
+    max-width:1140px;
+    margin:0 auto;
+  }
+
+  .brand{display:flex;align-items:center;gap:10px;font-family:'Fraunces',serif;font-weight:600;font-size:22px;color:var(--terracotta);}
+  .brand .dot{color:var(--dark);}
+
+  nav ul{display:flex;list-style:none;gap:36px;}
+  nav a{font-weight:500;font-size:15px;color:var(--dark);text-decoration:none;transition:color 0.3s ease;}
+  nav a:hover{color:var(--terracotta);}
+
+  .nav-right{display:flex;align-items:center;gap:28px;}
+
+  .btn{
+    display:inline-block;
+    font-weight:600;
+    font-size:14px;
+    padding:10px 22px;
+    border-radius:999px;
+    cursor:pointer;
+    border:none;
+    background:var(--terracotta);
+    color:#fff;
+    box-shadow:0 6px 18px rgba(192,67,42,0.28);
+    text-decoration:none;
+    transition:transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+  }
+  .btn:hover{background:#a83a24;transform:translateY(-2px);}
+
+  /* ---------- Filler content just to allow scrolling ---------- */
+  .hero{
+    padding:140px 24px 100px;
+    text-align:center;
+    max-width:760px;
+    margin:0 auto;
+  }
+  .hero h1{font-size:clamp(34px,6vw,58px);margin-bottom:16px;}
+  .hero p{font-size:18px;color:#5A4335;}
+
+  .filler-section{
+    padding:100px 24px;
+    max-width:760px;
+    margin:0 auto;
+  }
+  .filler-section:nth-child(odd){}
+  .filler-section h2{font-family:'Fraunces',serif;font-size:28px;margin-bottom:14px;}
+  .filler-section p{color:#5A4335;font-size:16px;}
+</style>
+</head>
+<body>
+
+<div class="demo-note">DEMO — scrolla la pagina per vedere l'header passare da trasparente a "vetro smerigliato" (blur + sfondo semitrasparente)</div>
+
+<header id="siteHeader">
+  <div class="nav-wrap">
+    <a href="#" class="brand">GestI<span class="dot">A</span></a>
+    <nav>
+      <ul>
+        <li><a href="#">Come funziona</a></li>
+        <li><a href="#">Funzionalità</a></li>
+        <li><a href="#">Prezzi</a></li>
+        <li><a href="#">Contatti</a></li>
+      </ul>
+    </nav>
+    <div class="nav-right">
+      <a href="#" class="btn">Richiedi una demo</a>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <h1>Automazioni AI per <em style="color:var(--terracotta);font-style:italic;">piccole attività</em></h1>
+    <p>Scrolla per vedere l'effetto sull'header qui sopra.</p>
+  </section>
+
+  <section class="filler-section">
+    <h2>Il problema</h2>
+    <p>I piccoli locali perdono tempo e clienti gestendo le prenotazioni al telefono o a mano. Ogni chiamata persa è un cliente in meno, ogni appunto su carta è un errore in agguato. Continua a scrollare: l'header sopra dovrebbe già essere passato alla versione sfocata.</p>
+  </section>
+
+  <section class="filler-section">
+    <h2>La soluzione</h2>
+    <p>Un bot AI risponde su Telegram o WhatsApp: gestisce prenotazioni, modifiche, cancellazioni e domande su orari, menu e policy, 24 ore su 24.</p>
+  </section>
+
+  <section class="filler-section">
+    <h2>Come funziona</h2>
+    <p>Altro paragrafo di riempimento solo per rendere la pagina scrollabile abbastanza da testare bene l'effetto in ogni condizione, incluso lo scroll veloce e lo scroll lento.</p>
+  </section>
+
+  <section class="filler-section">
+    <h2>Fine demo</h2>
+    <p>Se ti piace così, lo applico al sito vero. Se vuoi una soglia di attivazione diversa, un blur più/meno intenso, o un colore di sfondo diverso da scrollato, dimmelo e la aggiusto qui prima di toccare index.html.</p>
+  </section>
+</main>
+
+<script>
+  const header = document.getElementById('siteHeader');
+  const THRESHOLD = 40; // px di scroll prima di attivare l'effetto
+  function onScroll() {
+    if (window.scrollY > THRESHOLD) {
+      header.classList.add('scrolled');
+    } else {
+      header.classList.remove('scrolled');
+    }
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+</script>
+
+</body>
+</html>

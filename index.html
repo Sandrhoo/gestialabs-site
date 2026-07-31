@@ -117,10 +117,20 @@
     position:sticky;
     top:0;
     z-index:100;
-    background:rgba(253,246,236,0.9);
-    backdrop-filter:blur(10px);
-    -webkit-backdrop-filter:blur(10px);
+    background:transparent;
+    backdrop-filter:blur(0px);
+    -webkit-backdrop-filter:blur(0px);
+    border-bottom:1px solid transparent;
+    box-shadow:0 0 0 rgba(58,36,24,0);
+    transition:background 0.35s ease, backdrop-filter 0.35s ease, -webkit-backdrop-filter 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
+  }
+
+  header.scrolled{
+    background:rgba(253,246,236,0.78);
+    backdrop-filter:blur(14px);
+    -webkit-backdrop-filter:blur(14px);
     border-bottom:1px solid var(--border);
+    box-shadow:0 8px 24px rgba(58,36,24,0.06);
   }
 
   .nav-wrap{
@@ -1076,6 +1086,70 @@
   }
   .footer-legal-link:hover{color:var(--terracotta);}
 
+  /* ---------- Notes toggle ---------- */
+  .notes-toggle{
+    display:inline-flex;
+    gap:6px;
+    background:var(--cream);
+    border:1px solid var(--border);
+    border-radius:999px;
+    padding:4px;
+  }
+
+  .notes-toggle-btn{
+    padding:8px 20px;
+    border:none;
+    border-radius:999px;
+    background:transparent;
+    font-family:'Hanken Grotesque',sans-serif;
+    font-weight:600;
+    font-size:13.5px;
+    color:#8A6A55;
+    cursor:pointer;
+    transition:background 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .notes-toggle-btn.active{
+    background:var(--terracotta);
+    color:#fff;
+    box-shadow:0 4px 12px rgba(192,67,42,0.25);
+  }
+
+  .notes-toggle-btn:not(.active):hover{color:var(--terracotta);}
+
+  .notes-field{
+    max-height:0;
+    overflow:hidden;
+    opacity:0;
+    transition:max-height 0.35s ease, opacity 0.3s ease, margin-top 0.35s ease;
+  }
+
+  .notes-field.open{
+    max-height:160px;
+    opacity:1;
+    margin-top:14px;
+  }
+
+  .notes-field textarea{
+    width:100%;
+    padding:13px 16px;
+    border-radius:10px;
+    border:1.5px solid var(--border);
+    background:var(--card);
+    font-family:'Hanken Grotesque',sans-serif;
+    font-size:14.5px;
+    color:var(--dark);
+    resize:vertical;
+    min-height:80px;
+    transition:border-color 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .notes-field textarea:focus{
+    outline:none;
+    border-color:var(--terracotta);
+    box-shadow:0 0 0 4px rgba(192,67,42,0.1);
+  }
+
   /* ---------- Consent checkbox ---------- */
   .consent-group{margin-bottom:20px;}
 
@@ -1605,6 +1679,16 @@
               <label for="bookContact">Telefono o email</label>
               <input type="text" id="bookContact" name="bookContact" placeholder="Come possiamo ricontattarti" required>
             </div>
+            <div class="form-group">
+              <label>Vuoi aggiungere delle note?</label>
+              <div class="notes-toggle" data-notes-target="bookNotesField">
+                <button type="button" class="notes-toggle-btn active" data-notes-choice="no">No</button>
+                <button type="button" class="notes-toggle-btn" data-notes-choice="si">Sì</button>
+              </div>
+              <div class="notes-field" id="bookNotesField">
+                <textarea id="bookNotes" name="bookNotes" placeholder="Scrivi qui le tue note..."></textarea>
+              </div>
+            </div>
             <div class="form-group consent-group">
               <label class="consent-label">
                 <input type="checkbox" id="bookConsent" name="bookConsent" required>
@@ -1641,6 +1725,16 @@
           <div class="form-group">
             <label for="contatto">Telefono o email</label>
             <input type="text" id="contatto" name="contatto" placeholder="Come possiamo ricontattarti" required>
+          </div>
+          <div class="form-group">
+            <label>Vuoi aggiungere delle note?</label>
+            <div class="notes-toggle" data-notes-target="emailNotesField">
+              <button type="button" class="notes-toggle-btn active" data-notes-choice="no">No</button>
+              <button type="button" class="notes-toggle-btn" data-notes-choice="si">Sì</button>
+            </div>
+            <div class="notes-field" id="emailNotesField">
+              <textarea id="emailNotes" name="emailNotes" placeholder="Scrivi qui le tue note..."></textarea>
+            </div>
           </div>
           <div class="form-group consent-group">
             <label class="consent-label">
@@ -1758,6 +1852,34 @@
     el.addEventListener('click', () => trackEvent(el.getAttribute('data-track')));
   });
 
+  // Navbar blur + background on scroll
+  const siteHeader = document.querySelector('header');
+  const HEADER_SCROLL_THRESHOLD = 40;
+  function updateHeaderOnScroll() {
+    siteHeader.classList.toggle('scrolled', window.scrollY > HEADER_SCROLL_THRESHOLD);
+  }
+  window.addEventListener('scroll', updateHeaderOnScroll, { passive: true });
+  updateHeaderOnScroll();
+
+  // Notes toggle (Sì/No) on contact forms
+  document.querySelectorAll('.notes-toggle').forEach((toggle) => {
+    const field = document.getElementById(toggle.dataset.notesTarget);
+    const textarea = field ? field.querySelector('textarea') : null;
+    toggle.querySelectorAll('.notes-toggle-btn').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        toggle.querySelectorAll('.notes-toggle-btn').forEach((b) => b.classList.remove('active'));
+        btn.classList.add('active');
+        const showNotes = btn.dataset.notesChoice === 'si';
+        if (field) field.classList.toggle('open', showNotes);
+        if (showNotes && textarea) {
+          textarea.focus();
+        } else if (textarea) {
+          textarea.value = '';
+        }
+      });
+    });
+  });
+
   // Mobile menu toggle
   const menuToggle = document.getElementById('menuToggle');
   const navList = document.getElementById('navList');
@@ -1793,11 +1915,13 @@
     const nome = document.getElementById('nome').value.trim();
     const locale = document.getElementById('locale').value.trim();
     const contatto = document.getElementById('contatto').value.trim();
+    const note = document.getElementById('emailNotes').value.trim();
     const subject = encodeURIComponent('Richiesta demo GestIA — ' + locale);
     const body = encodeURIComponent(
       'Nome: ' + nome + '\n' +
       'Locale: ' + locale + '\n' +
-      'Contatto: ' + contatto + '\n'
+      'Contatto: ' + contatto + '\n' +
+      (note ? 'Note: ' + note + '\n' : '')
     );
     window.location.href = 'mailto:cipensoiomet@gmail.com?subject=' + subject + '&body=' + body;
   });
@@ -1931,6 +2055,7 @@
         name: document.getElementById('bookName').value.trim(),
         business: document.getElementById('bookBusiness').value.trim(),
         contact: document.getElementById('bookContact').value.trim(),
+        notes: document.getElementById('bookNotes').value.trim(),
         slot: booking.selectedSlot.start
       })
     })
