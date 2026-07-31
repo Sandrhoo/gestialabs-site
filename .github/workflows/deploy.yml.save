@@ -1,4 +1,4 @@
-name: Deploy to Hostinger
+server-dir: /public_html/name: Deploy to Hostinger
 on:
   push:
     branches: [main]
@@ -14,5 +14,5 @@ jobs:
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: ./
-          server-dir: /home/u727198998/domains/gestialabs.com/public_html//
+          server-dir: /public_html/
 
