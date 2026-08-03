@@ -679,6 +679,46 @@
     color:#5A4335;
   }
 
+  /* ---------- Cosa include l'abbonamento ---------- */
+  .included-grid{
+    display:grid;
+    grid-template-columns:repeat(2, 1fr);
+    gap:28px 40px;
+    max-width:880px;
+    margin:0 auto;
+  }
+
+  .included-item{
+    display:flex;
+    align-items:flex-start;
+    gap:16px;
+  }
+
+  .included-item .icon-badge{
+    width:40px;height:40px;
+    border-radius:11px;
+    background:rgba(192,67,42,0.08);
+    color:var(--terracotta);
+    flex-shrink:0;
+  }
+
+  .included-item .icon-badge svg{width:20px;height:20px;}
+
+  .included-item h4{
+    font-size:16px;
+    margin-bottom:4px;
+  }
+
+  .included-item p{
+    font-size:14px;
+    color:#5A4335;
+    line-height:1.55;
+  }
+
+  @media (max-width:640px){
+    .included-grid{grid-template-columns:1fr;gap:22px;}
+  }
+
   /* ---------- Perché GestIA ---------- */
   .why-wrap{
     max-width:900px;
@@ -1613,6 +1653,80 @@
           </div>
         </div>
         <p class="pricing-note">Il prezzo esatto dipende dalla complessità del locale — nessun costo nascosto.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- COSA INCLUDE L'ABBONAMENTO -->
+  <section class="section" id="incluso">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="tag">Cosa include l'abbonamento</span>
+        <h2>Tutto compreso, nessun extra a sorpresa</h2>
+        <p>L'abbonamento non è solo il bot: è il servizio che lo tiene sempre efficiente.</p>
+      </div>
+      <div class="included-grid">
+
+        <div class="included-item reveal">
+          <div class="icon-badge">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+          </div>
+          <div>
+            <h4>Assistenza dedicata</h4>
+            <p>Rispondiamo rapidamente a ogni dubbio o richiesta, senza call center né moduli da compilare.</p>
+          </div>
+        </div>
+
+        <div class="included-item reveal reveal-delay-1">
+          <div class="icon-badge">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+          </div>
+          <div>
+            <h4>Manutenzione continua</h4>
+            <p>Controlliamo che tutto funzioni correttamente, senza che tu debba occupartene.</p>
+          </div>
+        </div>
+
+        <div class="included-item reveal reveal-delay-2">
+          <div class="icon-badge">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+          </div>
+          <div>
+            <h4>Monitoraggio 24 ore su 24</h4>
+            <p>Se qualcosa non risponde come dovrebbe ce ne accorgiamo prima dei tuoi clienti.</p>
+          </div>
+        </div>
+
+        <div class="included-item reveal reveal-delay-3">
+          <div class="icon-badge">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+          </div>
+          <div>
+            <h4>Aggiornamenti su menu, orari e policy</h4>
+            <p>Cambia qualcosa nel locale? Ce lo scrivi e aggiorniamo noi il bot, senza costi aggiuntivi.</p>
+          </div>
+        </div>
+
+        <div class="included-item reveal reveal-delay-4">
+          <div class="icon-badge">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+          </div>
+          <div>
+            <h4>Nuove funzionalità incluse</h4>
+            <p>Ogni miglioramento futuro del prodotto entra nel tuo abbonamento, senza upgrade a pagamento.</p>
+          </div>
+        </div>
+
+        <div class="included-item reveal reveal-delay-5">
+          <div class="icon-badge">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+          </div>
+          <div>
+            <h4>Dati al sicuro</h4>
+            <p>Backup regolari delle prenotazioni e nessuna condivisione dei dati con terzi.</p>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
