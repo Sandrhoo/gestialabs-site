@@ -674,17 +674,18 @@
     margin-bottom:10px;
   }
 
-  .feature-card p{
-    font-size:14.5px;
-    color:#5A4335;
-  }
-
   /* ---------- Cosa include l'abbonamento ---------- */
   .included-grid{
     display:grid;
     grid-template-columns:repeat(2, 1fr);
     gap:28px 40px;
     max-width:880px;
+    margin:0 auto;
+  }
+
+  .included-item:last-child:nth-child(odd){
+    grid-column:1 / -1;
+    max-width:380px;
     margin:0 auto;
   }
 
@@ -717,6 +718,11 @@
 
   @media (max-width:640px){
     .included-grid{grid-template-columns:1fr;gap:22px;}
+  }
+
+  .feature-card p{
+    font-size:14.5px;
+    color:#5A4335;
   }
 
   /* ---------- Perché GestIA ---------- */
@@ -807,6 +813,211 @@
     margin-top:24px;
     padding-top:24px;
     border-top:1px solid var(--border);
+  }
+
+  /* ---------- Calcolatore prezzi ---------- */
+  .calculator-card{
+    max-width:640px;
+    margin-top:28px;
+  }
+
+  .calc-title{
+    font-family:'Fraunces',Georgia,serif;
+    font-size:20px;
+    font-weight:600;
+    text-align:center;
+    margin-bottom:28px;
+  }
+
+  .calc-slider-block{margin-bottom:26px;}
+
+  .calc-slider-label{
+    display:block;
+    font-size:15px;
+    font-weight:600;
+    color:var(--dark);
+    margin-bottom:14px;
+  }
+
+  .calc-slider-row{
+    display:flex;
+    align-items:center;
+    gap:16px;
+  }
+
+  .calc-slider{
+    -webkit-appearance:none;
+    appearance:none;
+    flex:1;
+    height:44px;
+    background:transparent;
+    cursor:pointer;
+    margin:0;
+    --pct:22.2%;
+  }
+  .calc-slider::-webkit-slider-runnable-track{
+    height:6px;
+    border-radius:999px;
+    background:linear-gradient(to right, var(--terracotta) 0%, var(--terracotta) var(--pct), var(--border) var(--pct), var(--border) 100%);
+  }
+  .calc-slider::-webkit-slider-thumb{
+    -webkit-appearance:none;
+    width:26px;height:26px;
+    border-radius:50%;
+    background:#fff;
+    border:3px solid var(--terracotta);
+    box-shadow:0 2px 8px rgba(58,36,24,0.2);
+    margin-top:-10px;
+    cursor:pointer;
+  }
+  .calc-slider::-moz-range-track{
+    height:6px;
+    border-radius:999px;
+    background:var(--border);
+  }
+  .calc-slider::-moz-range-progress{
+    height:6px;
+    border-radius:999px;
+    background:var(--terracotta);
+  }
+  .calc-slider::-moz-range-thumb{
+    width:20px;height:20px;
+    border-radius:50%;
+    background:#fff;
+    border:3px solid var(--terracotta);
+    box-shadow:0 2px 8px rgba(58,36,24,0.2);
+    cursor:pointer;
+  }
+  .calc-slider:focus{outline:none;}
+  .calc-slider:focus::-webkit-slider-thumb{box-shadow:0 0 0 5px rgba(192,67,42,0.15);}
+  .calc-slider:focus::-moz-range-thumb{box-shadow:0 0 0 5px rgba(192,67,42,0.15);}
+
+  .calc-seats-value{
+    font-family:'Fraunces',Georgia,serif;
+    font-weight:700;
+    font-size:20px;
+    color:var(--terracotta);
+    min-width:34px;
+    text-align:right;
+    flex-shrink:0;
+  }
+
+  .calc-options{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+    margin-bottom:26px;
+  }
+
+  .calc-option{
+    display:flex;
+    align-items:flex-start;
+    gap:14px;
+    padding:14px 16px;
+    border:1.5px solid var(--border);
+    border-radius:14px;
+    cursor:pointer;
+    transition:border-color 0.3s ease, background 0.3s ease;
+  }
+  .calc-option:hover{border-color:rgba(192,67,42,0.3);}
+  .calc-option.is-checked{border-color:var(--terracotta);background:rgba(192,67,42,0.04);}
+
+  .calc-option input[type="checkbox"]{
+    width:22px;height:22px;
+    margin-top:2px;
+    accent-color:var(--terracotta);
+    flex-shrink:0;
+    cursor:pointer;
+  }
+
+  .calc-option-text strong{
+    display:block;
+    font-size:15px;
+    color:var(--dark);
+    margin-bottom:3px;
+  }
+
+  .calc-option-text small{
+    display:block;
+    font-size:13px;
+    color:#5A4335;
+    line-height:1.5;
+  }
+
+  .calc-billing-toggle{margin-bottom:26px;}
+
+  .calc-badge{
+    display:inline-block;
+    margin-left:6px;
+    padding:2px 8px;
+    border-radius:999px;
+    background:rgba(244,167,46,0.22);
+    color:#B4780F;
+    font-size:11px;
+    font-weight:700;
+  }
+  .contact-tab.active .calc-badge{background:rgba(255,255,255,0.25);color:#fff;}
+
+  .calc-output{
+    background:var(--cream);
+    border:1px solid var(--border);
+    border-radius:16px;
+    padding:24px;
+  }
+
+  .calc-output-line{
+    display:flex;
+    justify-content:space-between;
+    align-items:baseline;
+    padding:5px 0;
+  }
+
+  .calc-output-label{font-size:14px;color:#5A4335;}
+
+  .calc-output-value{
+    font-family:'Fraunces',Georgia,serif;
+    font-weight:700;
+    color:var(--terracotta);
+    font-size:19px;
+  }
+
+  .calc-output-highlight .calc-output-value{font-size:30px;}
+
+  .calc-output-sub{
+    font-size:13px;
+    color:#8A6A55;
+    margin:2px 0 0;
+  }
+  .calc-output-sub:empty{display:none;}
+
+  .calc-breakdown-title{
+    font-size:12px;
+    font-weight:700;
+    letter-spacing:0.04em;
+    text-transform:uppercase;
+    color:#8A6A55;
+    margin-top:18px;
+    padding-top:16px;
+    border-top:1px dashed var(--border);
+  }
+
+  .calc-breakdown{
+    display:flex;
+    flex-direction:column;
+    gap:6px;
+    margin-top:10px;
+  }
+
+  .calc-breakdown-line{
+    display:flex;
+    justify-content:space-between;
+    font-size:13.5px;
+    color:#5A4335;
+  }
+  .calc-breakdown-line strong{color:var(--dark);font-weight:600;}
+
+  @media (max-width:640px){
+    .calc-slider-label{font-size:14px;}
   }
 
   /* ---------- FAQ ---------- */
@@ -1641,18 +1852,68 @@
         <span class="tag">Prezzi</span>
         <h2>Trasparenti, senza sorprese</h2>
       </div>
+
       <div class="pricing-card reveal">
         <div class="price-row">
           <div class="price-item">
-            <div class="amount">59–89€</div>
-            <div class="label">abbonamento mensile</div>
+            <div class="amount">€390–690</div>
+            <div class="label">attivazione una tantum</div>
           </div>
           <div class="price-item">
-            <div class="amount">149–249€</div>
-            <div class="label">setup una tantum</div>
+            <div class="amount">€64–199</div>
+            <div class="label">canone al mese</div>
           </div>
         </div>
-        <p class="pricing-note">Il prezzo esatto dipende dalla complessità del locale — nessun costo nascosto.</p>
+        <p class="pricing-note">Il prezzo dipende solo da quanti posti hai. Nessuna commissione sulle prenotazioni: quello che incassi resta tuo.</p>
+      </div>
+
+      <div class="pricing-card calculator-card reveal reveal-delay-1">
+        <h3 class="calc-title">Calcola il prezzo per il tuo locale</h3>
+
+        <div class="calc-slider-block">
+          <label for="seatsSlider" class="calc-slider-label">Quanti posti a sedere ha il tuo locale?</label>
+          <div class="calc-slider-row">
+            <input type="range" id="seatsSlider" class="calc-slider" min="20" max="200" step="5" value="60" aria-describedby="seatsValue">
+            <span class="calc-seats-value"><span id="seatsValue">60</span></span>
+          </div>
+        </div>
+
+        <div class="calc-options">
+          <label class="calc-option" id="optReminderRow">
+            <input type="checkbox" id="optReminder">
+            <span class="calc-option-text">
+              <strong>Promemoria prenotazione</strong>
+              <small>Un messaggio WhatsApp al cliente poche ore prima, per ridurre i tavoli che non si presentano.</small>
+            </span>
+          </label>
+          <label class="calc-option" id="optReviewsRow">
+            <input type="checkbox" id="optReviews">
+            <span class="calc-option-text">
+              <strong>Recensioni post-visita</strong>
+              <small>Il giorno dopo chiediamo al cliente com'è andata, con il link alle tue recensioni Google.</small>
+            </span>
+          </label>
+        </div>
+
+        <div class="contact-tabs calc-billing-toggle" role="tablist">
+          <button type="button" class="contact-tab active" id="billMonthly" role="tab" aria-selected="true">Mensile</button>
+          <button type="button" class="contact-tab" id="billYearly" role="tab" aria-selected="false">Annuale <span class="calc-badge">2 mesi gratis</span></button>
+        </div>
+
+        <div class="calc-output">
+          <div class="calc-output-line">
+            <span class="calc-output-label">Attivazione una tantum</span>
+            <span class="calc-output-value" id="calcSetup">€490</span>
+          </div>
+          <div class="calc-output-line calc-output-highlight">
+            <span class="calc-output-label" id="calcRecurringLabel">Poi al mese</span>
+            <span class="calc-output-value" id="calcRecurring">€94</span>
+          </div>
+          <p class="calc-output-sub" id="calcSubNote"></p>
+
+          <div class="calc-breakdown-title">Dettaglio voci (al mese)</div>
+          <div class="calc-breakdown" id="calcBreakdown"></div>
+        </div>
       </div>
     </div>
   </section>
@@ -1663,7 +1924,7 @@
       <div class="section-head reveal">
         <span class="tag">Cosa include l'abbonamento</span>
         <h2>Tutto compreso, nessun extra a sorpresa</h2>
-        <p>L'abbonamento non è solo il bot: è il servizio che lo tiene sempre efficiente.</p>
+        <p>Dal giorno dell'attivazione, ecco cosa hai sempre a disposizione, senza costi extra.</p>
       </div>
       <div class="included-grid">
 
@@ -1724,6 +1985,36 @@
           <div>
             <h4>Dati al sicuro</h4>
             <p>Backup regolari delle prenotazioni e nessuna condivisione dei dati con terzi.</p>
+          </div>
+        </div>
+
+        <div class="included-item reveal">
+          <div class="icon-badge">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+          </div>
+          <div>
+            <h4>Avviso automatico in caso di cancellazione</h4>
+            <p>Se una prenotazione salta, il cliente viene avvisato subito, senza che tu debba scrivergli.</p>
+          </div>
+        </div>
+
+        <div class="included-item reveal reveal-delay-1">
+          <div class="icon-badge">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+          </div>
+          <div>
+            <h4>Riepilogo giornaliero e controllo no-show</h4>
+            <p>Ogni giorno sai chi arriva, quando e se qualcuno rischia di non presentarsi.</p>
+          </div>
+        </div>
+
+        <div class="included-item reveal reveal-delay-2">
+          <div class="icon-badge">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+          </div>
+          <div>
+            <h4>Sincronizzazione con Google Calendar</h4>
+            <p>Ogni prenotazione entra nel tuo calendario in automatico, sempre aggiornato.</p>
           </div>
         </div>
 
@@ -2054,6 +2345,93 @@
       menuToggle.setAttribute('aria-expanded', 'false');
     });
   });
+
+  // Calcolatore prezzi
+  const seatsSlider = document.getElementById('seatsSlider');
+  if (seatsSlider) {
+    const seatsValueEl = document.getElementById('seatsValue');
+    const optReminder = document.getElementById('optReminder');
+    const optReviews = document.getElementById('optReviews');
+    const optReminderRow = document.getElementById('optReminderRow');
+    const optReviewsRow = document.getElementById('optReviewsRow');
+    const billMonthly = document.getElementById('billMonthly');
+    const billYearly = document.getElementById('billYearly');
+    const calcSetup = document.getElementById('calcSetup');
+    const calcRecurring = document.getElementById('calcRecurring');
+    const calcRecurringLabel = document.getElementById('calcRecurringLabel');
+    const calcSubNote = document.getElementById('calcSubNote');
+    const calcBreakdown = document.getElementById('calcBreakdown');
+
+    let billingMode = 'monthly';
+
+    function updateSliderFill() {
+      const min = Number(seatsSlider.min);
+      const max = Number(seatsSlider.max);
+      const val = Number(seatsSlider.value);
+      const pct = ((val - min) / (max - min)) * 100;
+      seatsSlider.style.setProperty('--pct', pct + '%');
+    }
+
+    function recomputePricing() {
+      const seats = Number(seatsSlider.value);
+      seatsValueEl.textContent = seats;
+      updateSliderFill();
+
+      const base = Math.round(49 + 0.75 * seats);
+      const reminderOn = optReminder.checked;
+      const reviewsOn = optReviews.checked;
+      const reminder = reminderOn ? Math.round(12 + 0.20 * seats) : 0;
+      const reviews = reviewsOn ? Math.round(19 + 0.27 * seats) : 0;
+      const totaleMensile = base + reminder + reviews;
+
+      const setup = seats <= 45 ? 390 : (seats <= 90 ? 490 : 690);
+      calcSetup.textContent = '€' + setup;
+
+      if (billingMode === 'yearly') {
+        const totaleAnnuale = totaleMensile * 10;
+        const equivalenteMensile = Math.round(totaleAnnuale / 12);
+        const risparmio = (totaleMensile * 12) - totaleAnnuale;
+        calcRecurringLabel.textContent = "All'anno";
+        calcRecurring.textContent = '€' + totaleAnnuale;
+        calcSubNote.textContent = 'Pari a €' + equivalenteMensile + ' al mese — risparmi €' + risparmio + ' rispetto al mensile.';
+      } else {
+        calcRecurringLabel.textContent = 'Poi al mese';
+        calcRecurring.textContent = '€' + totaleMensile;
+        calcSubNote.textContent = '';
+      }
+
+      const items = [{ label: 'Base (' + seats + ' posti)', value: base }];
+      if (reminderOn) items.push({ label: 'Promemoria prenotazione', value: reminder });
+      if (reviewsOn) items.push({ label: 'Recensioni post-visita', value: reviews });
+      calcBreakdown.innerHTML = items.map(function (i) {
+        return '<div class="calc-breakdown-line"><span>' + i.label + '</span><strong>€' + i.value + '</strong></div>';
+      }).join('');
+    }
+
+    seatsSlider.addEventListener('input', recomputePricing);
+
+    function bindCalcOption(checkbox, row) {
+      checkbox.addEventListener('change', function () {
+        row.classList.toggle('is-checked', checkbox.checked);
+        recomputePricing();
+      });
+    }
+    bindCalcOption(optReminder, optReminderRow);
+    bindCalcOption(optReviews, optReviewsRow);
+
+    function setBillingMode(mode) {
+      billingMode = mode;
+      billMonthly.classList.toggle('active', mode === 'monthly');
+      billMonthly.setAttribute('aria-selected', mode === 'monthly');
+      billYearly.classList.toggle('active', mode === 'yearly');
+      billYearly.setAttribute('aria-selected', mode === 'yearly');
+      recomputePricing();
+    }
+    billMonthly.addEventListener('click', () => setBillingMode('monthly'));
+    billYearly.addEventListener('click', () => setBillingMode('yearly'));
+
+    recomputePricing();
+  }
 
   // Scroll reveal
   const revealEls = document.querySelectorAll('.reveal');
