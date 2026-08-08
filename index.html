@@ -946,6 +946,19 @@
 
   .calc-billing-toggle{margin-bottom:26px;}
 
+  .calc-billing-toggle.contact-tabs{padding:5px;gap:6px;}
+
+  .calc-billing-toggle .contact-tab{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    gap:3px;
+    min-height:48px;
+    padding:9px 6px;
+    font-size:13px;
+  }
+
   .calc-badge{
     display:inline-block;
     margin-left:6px;
@@ -956,6 +969,7 @@
     font-size:11px;
     font-weight:700;
   }
+  .calc-billing-toggle .calc-badge{margin-left:0;}
   .contact-tab.active .calc-badge{background:rgba(255,255,255,0.25);color:#fff;}
 
   .calc-output{
@@ -963,6 +977,30 @@
     border:1px solid var(--border);
     border-radius:16px;
     padding:24px;
+  }
+
+  .calc-output-total{
+    text-align:center;
+    padding-bottom:20px;
+    margin-bottom:16px;
+    border-bottom:1px solid var(--border);
+  }
+
+  .calc-output-total-label{
+    display:block;
+    font-size:12.5px;
+    font-weight:700;
+    letter-spacing:0.04em;
+    text-transform:uppercase;
+    color:#8A6A55;
+    margin-bottom:6px;
+  }
+
+  .calc-output-total-value{
+    font-family:'Fraunces',Georgia,serif;
+    font-weight:700;
+    color:var(--terracotta);
+    font-size:36px;
   }
 
   .calc-output-line{
@@ -980,8 +1018,6 @@
     color:var(--terracotta);
     font-size:19px;
   }
-
-  .calc-output-highlight .calc-output-value{font-size:30px;}
 
   .calc-output-sub{
     font-size:13px;
@@ -1897,21 +1933,27 @@
 
         <div class="contact-tabs calc-billing-toggle" role="tablist">
           <button type="button" class="contact-tab active" id="billMonthly" role="tab" aria-selected="true">Mensile</button>
+          <button type="button" class="contact-tab" id="billSemestral" role="tab" aria-selected="false">Semestrale <span class="calc-badge">1 mese gratis</span></button>
           <button type="button" class="contact-tab" id="billYearly" role="tab" aria-selected="false">Annuale <span class="calc-badge">2 mesi gratis</span></button>
         </div>
 
         <div class="calc-output">
+          <div class="calc-output-total">
+            <span class="calc-output-total-label" id="calcTotalLabel">Totale al primo mese</span>
+            <span class="calc-output-total-value" id="calcTotal">€584</span>
+          </div>
+
           <div class="calc-output-line">
             <span class="calc-output-label">Attivazione una tantum</span>
             <span class="calc-output-value" id="calcSetup">€490</span>
           </div>
-          <div class="calc-output-line calc-output-highlight">
-            <span class="calc-output-label" id="calcRecurringLabel">Poi al mese</span>
+          <div class="calc-output-line">
+            <span class="calc-output-label" id="calcRecurringLabel">Canone al mese</span>
             <span class="calc-output-value" id="calcRecurring">€94</span>
           </div>
           <p class="calc-output-sub" id="calcSubNote"></p>
 
-          <div class="calc-breakdown-title">Dettaglio voci (al mese)</div>
+          <div class="calc-breakdown-title" id="calcBreakdownTitle">Dettaglio voci (al mese)</div>
           <div class="calc-breakdown" id="calcBreakdown"></div>
         </div>
       </div>
@@ -2355,11 +2397,15 @@
     const optReminderRow = document.getElementById('optReminderRow');
     const optReviewsRow = document.getElementById('optReviewsRow');
     const billMonthly = document.getElementById('billMonthly');
+    const billSemestral = document.getElementById('billSemestral');
     const billYearly = document.getElementById('billYearly');
+    const calcTotalLabel = document.getElementById('calcTotalLabel');
+    const calcTotal = document.getElementById('calcTotal');
     const calcSetup = document.getElementById('calcSetup');
     const calcRecurring = document.getElementById('calcRecurring');
     const calcRecurringLabel = document.getElementById('calcRecurringLabel');
     const calcSubNote = document.getElementById('calcSubNote');
+    const calcBreakdownTitle = document.getElementById('calcBreakdownTitle');
     const calcBreakdown = document.getElementById('calcBreakdown');
 
     let billingMode = 'monthly';
@@ -2387,25 +2433,49 @@
       const setup = seats <= 45 ? 390 : (seats <= 90 ? 490 : 690);
       calcSetup.textContent = '€' + setup;
 
+      let totalDue;
+      const onceNote = "L'attivazione si paga una sola volta, solo ora. ";
+
       if (billingMode === 'yearly') {
         const totaleAnnuale = totaleMensile * 10;
         const equivalenteMensile = Math.round(totaleAnnuale / 12);
         const risparmio = (totaleMensile * 12) - totaleAnnuale;
-        calcRecurringLabel.textContent = "All'anno";
+        calcRecurringLabel.textContent = 'Canone annuale';
         calcRecurring.textContent = '€' + totaleAnnuale;
-        calcSubNote.textContent = 'Pari a €' + equivalenteMensile + ' al mese — risparmi €' + risparmio + ' rispetto al mensile.';
+        calcSubNote.textContent = onceNote + 'Il canone annuale equivale a €' + equivalenteMensile + ' al mese — risparmi €' + risparmio + ' rispetto al mensile.';
+        calcTotalLabel.textContent = 'Totale alla sottoscrizione';
+        totalDue = setup + totaleAnnuale;
+      } else if (billingMode === 'semestral') {
+        const totaleSemestrale = totaleMensile * 5;
+        const equivalenteMensile = Math.round(totaleSemestrale / 6);
+        const risparmio = (totaleMensile * 6) - totaleSemestrale;
+        calcRecurringLabel.textContent = 'Canone semestrale';
+        calcRecurring.textContent = '€' + totaleSemestrale;
+        calcSubNote.textContent = onceNote + 'Il canone semestrale equivale a €' + equivalenteMensile + ' al mese — risparmi €' + risparmio + ' rispetto al mensile.';
+        calcTotalLabel.textContent = 'Totale alla sottoscrizione';
+        totalDue = setup + totaleSemestrale;
       } else {
-        calcRecurringLabel.textContent = 'Poi al mese';
+        calcRecurringLabel.textContent = 'Canone al mese';
         calcRecurring.textContent = '€' + totaleMensile;
-        calcSubNote.textContent = '';
+        calcSubNote.textContent = onceNote + 'Dal secondo mese paghi solo il canone.';
+        calcTotalLabel.textContent = 'Totale al primo mese';
+        totalDue = setup + totaleMensile;
       }
 
-      const items = [{ label: 'Base (' + seats + ' posti)', value: base }];
-      if (reminderOn) items.push({ label: 'Promemoria prenotazione', value: reminder });
-      if (reviewsOn) items.push({ label: 'Recensioni post-visita', value: reviews });
-      calcBreakdown.innerHTML = items.map(function (i) {
-        return '<div class="calc-breakdown-line"><span>' + i.label + '</span><strong>€' + i.value + '</strong></div>';
-      }).join('');
+      calcTotal.textContent = '€' + totalDue;
+
+      const hasOptions = reminderOn || reviewsOn;
+      calcBreakdownTitle.style.display = hasOptions ? '' : 'none';
+      calcBreakdown.style.display = hasOptions ? '' : 'none';
+
+      if (hasOptions) {
+        const items = [{ label: 'Base (' + seats + ' posti)', value: base }];
+        if (reminderOn) items.push({ label: 'Promemoria prenotazione', value: reminder });
+        if (reviewsOn) items.push({ label: 'Recensioni post-visita', value: reviews });
+        calcBreakdown.innerHTML = items.map(function (i) {
+          return '<div class="calc-breakdown-line"><span>' + i.label + '</span><strong>€' + i.value + '</strong></div>';
+        }).join('');
+      }
     }
 
     seatsSlider.addEventListener('input', recomputePricing);
@@ -2423,11 +2493,14 @@
       billingMode = mode;
       billMonthly.classList.toggle('active', mode === 'monthly');
       billMonthly.setAttribute('aria-selected', mode === 'monthly');
+      billSemestral.classList.toggle('active', mode === 'semestral');
+      billSemestral.setAttribute('aria-selected', mode === 'semestral');
       billYearly.classList.toggle('active', mode === 'yearly');
       billYearly.setAttribute('aria-selected', mode === 'yearly');
       recomputePricing();
     }
     billMonthly.addEventListener('click', () => setBillingMode('monthly'));
+    billSemestral.addEventListener('click', () => setBillingMode('semestral'));
     billYearly.addEventListener('click', () => setBillingMode('yearly'));
 
     recomputePricing();
