@@ -1173,20 +1173,6 @@
 
   .form-group textarea{resize:vertical;min-height:90px;}
 
-  .field-error{
-    display:none;
-    font-size:12.5px;
-    color:var(--terracotta);
-    margin-top:6px;
-    line-height:1.4;
-  }
-  .form-group.has-error .field-error{display:block;}
-  .form-group.has-error input,
-  .form-group.has-error select{
-    border-color:var(--terracotta);
-    box-shadow:0 0 0 3px rgba(192,67,42,0.08);
-  }
-
   .chip-group{
     display:flex;
     flex-wrap:wrap;
@@ -2204,28 +2190,23 @@
             <p class="booking-selected" id="bookingSelectedLabel"></p>
             <div class="form-group">
               <label for="bookName">Nome</label>
-              <input type="text" id="bookName" name="bookName" placeholder="Il tuo nome" required>
-              <span class="field-error" id="bookNameError"></span>
+              <input type="text" id="bookName" name="bookName" placeholder="Il tuo nome" required minlength="2" pattern="^(?!\d+$).+$" title="Inserisci il tuo nome">
             </div>
             <div class="form-group">
               <label for="bookBusiness">Nome del locale</label>
-              <input type="text" id="bookBusiness" name="bookBusiness" placeholder="Es. Trattoria da Mario" required>
-              <span class="field-error" id="bookBusinessError"></span>
+              <input type="text" id="bookBusiness" name="bookBusiness" placeholder="Es. Trattoria da Mario" required minlength="2" pattern="^(?!\d+$).+$" title="Inserisci il nome del locale">
             </div>
             <div class="form-group">
               <label for="bookSeats">Quanti posti a sedere ha il tuo locale?</label>
-              <input type="number" id="bookSeats" name="bookSeats" placeholder="Es. 60" min="10" max="500">
-              <span class="field-error" id="bookSeatsError"></span>
+              <input type="number" id="bookSeats" name="bookSeats" placeholder="Es. 60" min="10" max="500" title="Un numero tra 10 e 500">
             </div>
             <div class="form-group">
               <label for="bookEmail">Email</label>
-              <input type="email" id="bookEmail" name="bookEmail" placeholder="la-tua-email@esempio.it" required>
-              <span class="field-error" id="bookEmailError"></span>
+              <input type="email" id="bookEmail" name="bookEmail" placeholder="la-tua-email@esempio.it" required title="Inserisci un indirizzo email valido">
             </div>
             <div class="form-group">
               <label for="bookContact">Telefono</label>
-              <input type="tel" id="bookContact" name="bookContact" placeholder="Il tuo numero di telefono">
-              <span class="field-error" id="bookContactError"></span>
+              <input type="tel" id="bookContact" name="bookContact" placeholder="Es. 3331234567" pattern="^(\+39)?(3[0-9]{8,9}|0[0-9]{8,9})$" title="Numero italiano valido: cellulare (3xx) o fisso (0xx), 9-10 cifre, senza spazi">
             </div>
             <div class="form-group">
               <label>Come ci hai scoperto?</label>
@@ -2276,28 +2257,23 @@
         <form class="contact-panel" id="panelEmail">
           <div class="form-group">
             <label for="nome">Nome</label>
-            <input type="text" id="nome" name="nome" placeholder="Il tuo nome" required>
-            <span class="field-error" id="nomeError"></span>
+            <input type="text" id="nome" name="nome" placeholder="Il tuo nome" required minlength="2" pattern="^(?!\d+$).+$" title="Inserisci il tuo nome">
           </div>
           <div class="form-group">
             <label for="locale">Nome del locale</label>
-            <input type="text" id="locale" name="locale" placeholder="Es. Trattoria da Mario" required>
-            <span class="field-error" id="localeError"></span>
+            <input type="text" id="locale" name="locale" placeholder="Es. Trattoria da Mario" required minlength="2" pattern="^(?!\d+$).+$" title="Inserisci il nome del locale">
           </div>
           <div class="form-group">
             <label for="emailSeats">Quanti posti a sedere ha il tuo locale?</label>
-            <input type="number" id="emailSeats" name="emailSeats" placeholder="Es. 60" min="10" max="500">
-            <span class="field-error" id="emailSeatsError"></span>
+            <input type="number" id="emailSeats" name="emailSeats" placeholder="Es. 60" min="10" max="500" title="Un numero tra 10 e 500">
           </div>
           <div class="form-group">
             <label for="emailAddress">Email</label>
-            <input type="email" id="emailAddress" name="emailAddress" placeholder="la-tua-email@esempio.it" required>
-            <span class="field-error" id="emailAddressError"></span>
+            <input type="email" id="emailAddress" name="emailAddress" placeholder="la-tua-email@esempio.it" required title="Inserisci un indirizzo email valido">
           </div>
           <div class="form-group">
             <label for="contatto">Telefono</label>
-            <input type="tel" id="contatto" name="contatto" placeholder="Il tuo numero di telefono">
-            <span class="field-error" id="contattoError"></span>
+            <input type="tel" id="contatto" name="contatto" placeholder="Es. 3331234567" pattern="^(\+39)?(3[0-9]{8,9}|0[0-9]{8,9})$" title="Numero italiano valido: cellulare (3xx) o fisso (0xx), 9-10 cifre, senza spazi">
           </div>
           <div class="form-group">
             <label>Come ci hai scoperto?</label>
@@ -2611,112 +2587,6 @@
   }, { threshold: 0.15, rootMargin: '0px 0px -60px 0px' });
   revealEls.forEach(el => observer.observe(el));
 
-  // ---------- Validazione campi (nome, locale, email, telefono, posti) ----------
-  const DISPOSABLE_EMAIL_DOMAINS = [
-    'mailinator.com', 'guerrillamail.com', '10minutemail.com', 'tempmail.com',
-    'temp-mail.org', 'yopmail.com', 'trashmail.com', 'fakeinbox.com',
-    'getnada.com', 'sharklasers.com', 'maildrop.cc', 'dispostable.com',
-    'throwawaymail.com', 'mintemail.com', 'mailnesia.com'
-  ];
-
-  function isRepeatedOrSequential(digits) {
-    if (/^(\d)\1+$/.test(digits)) return true;
-    const asc = '01234567890123456789';
-    const desc = '98765432109876543210';
-    return asc.includes(digits) || desc.includes(digits);
-  }
-
-  function validatePhoneValue(raw) {
-    const v = (raw || '').trim();
-    if (!v) return null; // telefono opzionale
-    const stripped = v.replace(/[\s.\-]/g, '').replace(/^\+39/, '');
-    if (!/^\d{9,10}$/.test(stripped)) return 'Numero non valido: usa 9-10 cifre, con eventuale prefisso +39.';
-    if (!/^(3\d{8,9}|0\d{8,9})$/.test(stripped)) return 'Inserisci un numero italiano valido (cellulare 3xx o fisso 0xx).';
-    if (isRepeatedOrSequential(stripped)) return 'Questo numero non sembra valido.';
-    return null;
-  }
-
-  function validateEmailValue(raw) {
-    const v = (raw || '').trim();
-    if (!v) return 'Inserisci la tua email.';
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v)) return 'Email non valida.';
-    const domain = v.split('@')[1].toLowerCase();
-    if (DISPOSABLE_EMAIL_DOMAINS.includes(domain)) return 'Usa un indirizzo email non temporaneo.';
-    return null;
-  }
-
-  function validateTextValue(raw, label) {
-    const v = (raw || '').trim();
-    if (v.length < 2) return label + ' troppo corto.';
-    if (/^\d+$/.test(v)) return label + ' non valido.';
-    return null;
-  }
-
-  function validateSeatsValue(raw) {
-    const v = (raw || '').trim();
-    if (!v) return null; // opzionale
-    const n = Number(v);
-    if (!Number.isInteger(n) || n < 10 || n > 500) return 'Inserisci un numero di posti tra 10 e 500.';
-    return null;
-  }
-
-  function setFieldError(inputId, errorId, message) {
-    const input = document.getElementById(inputId);
-    const errorEl = document.getElementById(errorId);
-    if (!input || !errorEl) return true;
-    const group = input.closest('.form-group');
-    if (message) {
-      if (group) group.classList.add('has-error');
-      errorEl.textContent = message;
-      return false;
-    }
-    if (group) group.classList.remove('has-error');
-    errorEl.textContent = '';
-    return true;
-  }
-
-  function wireFieldValidation(inputId, errorId, validatorFn, label) {
-    const input = document.getElementById(inputId);
-    if (!input) return;
-    input.addEventListener('blur', () => {
-      setFieldError(inputId, errorId, validatorFn(input.value, label));
-    });
-  }
-
-  function runFormValidation(fields) {
-    let firstInvalid = null;
-    let allValid = true;
-    fields.forEach(({ inputId, errorId, validatorFn, label }) => {
-      const input = document.getElementById(inputId);
-      const message = validatorFn(input.value, label);
-      const valid = setFieldError(inputId, errorId, message);
-      if (!valid) {
-        allValid = false;
-        if (!firstInvalid) firstInvalid = input;
-      }
-    });
-    if (firstInvalid) firstInvalid.focus();
-    return allValid;
-  }
-
-  const bookingFields = [
-    { inputId: 'bookName', errorId: 'bookNameError', validatorFn: validateTextValue, label: 'Il nome' },
-    { inputId: 'bookBusiness', errorId: 'bookBusinessError', validatorFn: validateTextValue, label: 'Il nome del locale' },
-    { inputId: 'bookSeats', errorId: 'bookSeatsError', validatorFn: validateSeatsValue },
-    { inputId: 'bookEmail', errorId: 'bookEmailError', validatorFn: validateEmailValue },
-    { inputId: 'bookContact', errorId: 'bookContactError', validatorFn: validatePhoneValue }
-  ];
-  bookingFields.forEach(f => wireFieldValidation(f.inputId, f.errorId, f.validatorFn, f.label));
-
-  const emailFormFields = [
-    { inputId: 'nome', errorId: 'nomeError', validatorFn: validateTextValue, label: 'Il nome' },
-    { inputId: 'locale', errorId: 'localeError', validatorFn: validateTextValue, label: 'Il nome del locale' },
-    { inputId: 'emailSeats', errorId: 'emailSeatsError', validatorFn: validateSeatsValue },
-    { inputId: 'emailAddress', errorId: 'emailAddressError', validatorFn: validateEmailValue },
-    { inputId: 'contatto', errorId: 'contattoError', validatorFn: validatePhoneValue }
-  ];
-  emailFormFields.forEach(f => wireFieldValidation(f.inputId, f.errorId, f.validatorFn, f.label));
-
   // Chip-group single-select (usato per "Come ci hai scoperto?")
   function initChipGroup(groupId, hiddenInputId) {
     const group = document.getElementById(groupId);
@@ -2742,7 +2612,6 @@
   const demoForm = document.getElementById('panelEmail');
   demoForm.addEventListener('submit', (e) => {
     e.preventDefault();
-    if (!runFormValidation(emailFormFields)) return;
     const nome = document.getElementById('nome').value.trim();
     const locale = document.getElementById('locale').value.trim();
     const seats = document.getElementById('emailSeats').value.trim();
@@ -2882,7 +2751,6 @@
 
   document.getElementById('bookingDetails').addEventListener('submit', (e) => {
     e.preventDefault();
-    if (!runFormValidation(bookingFields)) return;
     const submitBtn = e.target.querySelector('button[type="submit"]');
     submitBtn.disabled = true;
     submitBtn.textContent = 'Invio in corso…';
@@ -2909,9 +2777,6 @@
           showBookingStep(bookingSuccess);
         } else if (data && data.error === 'slot_taken') {
           showBookingStep(bookingConflict);
-        } else if (data && data.message) {
-          bookingErrorText.textContent = data.message;
-          showBookingStep(bookingErrorEl);
         } else {
           bookingErrorText.textContent = 'Non riesco a completare la prenotazione. Riprova tra poco.';
           showBookingStep(bookingErrorEl);
