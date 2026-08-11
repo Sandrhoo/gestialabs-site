@@ -2732,21 +2732,6 @@
   ];
   emailFormFields.forEach(f => wireFieldValidation(f.inputId, f.errorId, f.validatorFn, f.label));
 
-  // ---------- Anti-bot invisibile (solo sul form che chiama davvero il server) ----------
-  const PAGE_LOADED_AT = Date.now();
-  const ANTI_BOT_SALT = 'gestia-site-9f3c7a2e';
-
-  async function computeAntiBotToken(timestamp) {
-    const enc = new TextEncoder().encode(timestamp + ':' + ANTI_BOT_SALT);
-    const hashBuffer = await crypto.subtle.digest('SHA-256', enc);
-    return Array.from(new Uint8Array(hashBuffer)).map(b => b.toString(16).padStart(2, '0')).join('');
-  }
-
-  let hasInteracted = false;
-  ['mousemove', 'touchstart', 'pointerdown', 'keydown'].forEach((evt) => {
-    window.addEventListener(evt, () => { hasInteracted = true; }, { once: true, passive: true });
-  });
-
   // Chip-group single-select (usato per "Come ci hai scoperto?")
   function initChipGroup(groupId, hiddenInputId) {
     const group = document.getElementById(groupId);
@@ -2910,16 +2895,13 @@
     loadAvailability();
   });
 
-  document.getElementById('bookingDetails').addEventListener('submit', async (e) => {
+  document.getElementById('bookingDetails').addEventListener('submit', (e) => {
     e.preventDefault();
     if (!runFormValidation(bookingFields)) return;
 
     const submitBtn = e.target.querySelector('button[type="submit"]');
     submitBtn.disabled = true;
     submitBtn.textContent = 'Invio in corso…';
-
-    const elapsedSeconds = Math.round((Date.now() - PAGE_LOADED_AT) / 1000);
-    const antiBotToken = await computeAntiBotToken(PAGE_LOADED_AT);
 
     fetch(BOOKING_API + '/book', {
       method: 'POST',
@@ -2933,11 +2915,7 @@
         source: document.getElementById('bookSource').value,
         notes: document.getElementById('bookNotes').value.trim(),
         slot: booking.selectedSlot.start,
-        azienda: document.getElementById('bookAzienda').value,
-        pageLoadedAt: PAGE_LOADED_AT,
-        elapsedSeconds: elapsedSeconds,
-        antiBotToken: antiBotToken,
-        hasInteracted: hasInteracted
+        azienda: document.getElementById('bookAzienda').value
       })
     })
       .then((res) => res.json().then((data) => ({ ok: res.ok, data: data })))
@@ -2949,12 +2927,6 @@
           showBookingStep(bookingSuccess);
         } else if (data && data.error === 'slot_taken') {
           showBookingStep(bookingConflict);
-        } else if (data && data.error === 'validation' && data.fields) {
-          Object.keys(data.fields).forEach((key) => {
-            const map = { name: 'bookName', business: 'bookBusiness', seats: 'bookSeats', email: 'bookEmail', contact: 'bookContact' };
-            const inputId = map[key];
-            if (inputId) setFieldError(inputId, inputId + 'Error', data.fields[key]);
-          });
         } else if (data && data.message) {
           bookingErrorText.textContent = data.message;
           showBookingStep(bookingErrorEl);
