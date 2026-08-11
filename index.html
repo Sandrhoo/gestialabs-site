@@ -1148,6 +1148,7 @@
   }
 
   .form-group input,
+  .form-group select,
   .form-group textarea{
     width:100%;
     padding:13px 16px;
@@ -1160,7 +1161,10 @@
     transition:border-color 0.3s ease, box-shadow 0.3s ease;
   }
 
+  .form-group select{cursor:pointer;}
+
   .form-group input:focus,
+  .form-group select:focus,
   .form-group textarea:focus{
     outline:none;
     border-color:var(--terracotta);
@@ -1168,6 +1172,31 @@
   }
 
   .form-group textarea{resize:vertical;min-height:90px;}
+
+  .chip-group{
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+  }
+
+  .chip-option{
+    padding:9px 16px;
+    border-radius:999px;
+    border:1.5px solid var(--border);
+    background:var(--cream);
+    font-family:'Hanken Grotesque',sans-serif;
+    font-size:13.5px;
+    font-weight:600;
+    color:#8A6A55;
+    cursor:pointer;
+    transition:background 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+  }
+  .chip-option:hover{border-color:rgba(192,67,42,0.35);color:var(--terracotta);}
+  .chip-option.active{
+    background:var(--terracotta);
+    border-color:var(--terracotta);
+    color:#fff;
+  }
 
   .contact-wrap .btn-primary{width:100%;margin-top:8px;}
 
@@ -2168,8 +2197,28 @@
               <input type="text" id="bookBusiness" name="bookBusiness" placeholder="Es. Trattoria da Mario" required>
             </div>
             <div class="form-group">
-              <label for="bookContact">Telefono o email</label>
-              <input type="text" id="bookContact" name="bookContact" placeholder="Come possiamo ricontattarti" required>
+              <label for="bookSeats">Quanti posti a sedere ha il tuo locale?</label>
+              <input type="number" id="bookSeats" name="bookSeats" placeholder="Es. 60" min="1">
+            </div>
+            <div class="form-group">
+              <label for="bookEmail">Email</label>
+              <input type="email" id="bookEmail" name="bookEmail" placeholder="la-tua-email@esempio.it" required>
+            </div>
+            <div class="form-group">
+              <label for="bookContact">Telefono</label>
+              <input type="tel" id="bookContact" name="bookContact" placeholder="Il tuo numero di telefono">
+            </div>
+            <div class="form-group">
+              <label>Come ci hai scoperto?</label>
+              <input type="hidden" id="bookSource" name="bookSource" value="">
+              <div class="chip-group" id="bookSourceChips">
+                <button type="button" class="chip-option" data-source="Instagram">Instagram</button>
+                <button type="button" class="chip-option" data-source="Facebook">Facebook</button>
+                <button type="button" class="chip-option" data-source="LinkedIn">LinkedIn</button>
+                <button type="button" class="chip-option" data-source="Google">Google</button>
+                <button type="button" class="chip-option" data-source="Passaparola">Passaparola</button>
+                <button type="button" class="chip-option" data-source="Altro">Altro</button>
+              </div>
             </div>
             <div class="form-group">
               <label>Vuoi aggiungere delle note?</label>
@@ -2215,8 +2264,28 @@
             <input type="text" id="locale" name="locale" placeholder="Es. Trattoria da Mario" required>
           </div>
           <div class="form-group">
-            <label for="contatto">Telefono o email</label>
-            <input type="text" id="contatto" name="contatto" placeholder="Come possiamo ricontattarti" required>
+            <label for="emailSeats">Quanti posti a sedere ha il tuo locale?</label>
+            <input type="number" id="emailSeats" name="emailSeats" placeholder="Es. 60" min="1">
+          </div>
+          <div class="form-group">
+            <label for="emailAddress">Email</label>
+            <input type="email" id="emailAddress" name="emailAddress" placeholder="la-tua-email@esempio.it" required>
+          </div>
+          <div class="form-group">
+            <label for="contatto">Telefono</label>
+            <input type="tel" id="contatto" name="contatto" placeholder="Il tuo numero di telefono">
+          </div>
+          <div class="form-group">
+            <label>Come ci hai scoperto?</label>
+            <input type="hidden" id="emailSource" name="emailSource" value="">
+            <div class="chip-group" id="emailSourceChips">
+              <button type="button" class="chip-option" data-source="Instagram">Instagram</button>
+              <button type="button" class="chip-option" data-source="Facebook">Facebook</button>
+              <button type="button" class="chip-option" data-source="LinkedIn">LinkedIn</button>
+              <button type="button" class="chip-option" data-source="Google">Google</button>
+              <button type="button" class="chip-option" data-source="Passaparola">Passaparola</button>
+              <button type="button" class="chip-option" data-source="Altro">Altro</button>
+            </div>
           </div>
           <div class="form-group">
             <label>Vuoi aggiungere delle note?</label>
@@ -2518,19 +2587,46 @@
   }, { threshold: 0.15, rootMargin: '0px 0px -60px 0px' });
   revealEls.forEach(el => observer.observe(el));
 
+  // Chip-group single-select (usato per "Come ci hai scoperto?")
+  function initChipGroup(groupId, hiddenInputId) {
+    const group = document.getElementById(groupId);
+    const hiddenInput = document.getElementById(hiddenInputId);
+    if (!group || !hiddenInput) return;
+    group.querySelectorAll('.chip-option').forEach((chip) => {
+      chip.addEventListener('click', () => {
+        const alreadyActive = chip.classList.contains('active');
+        group.querySelectorAll('.chip-option').forEach((c) => c.classList.remove('active'));
+        if (alreadyActive) {
+          hiddenInput.value = '';
+        } else {
+          chip.classList.add('active');
+          hiddenInput.value = chip.dataset.source;
+        }
+      });
+    });
+  }
+  initChipGroup('bookSourceChips', 'bookSource');
+  initChipGroup('emailSourceChips', 'emailSource');
+
   // Contact form -> mailto
   const demoForm = document.getElementById('panelEmail');
   demoForm.addEventListener('submit', (e) => {
     e.preventDefault();
     const nome = document.getElementById('nome').value.trim();
     const locale = document.getElementById('locale').value.trim();
+    const seats = document.getElementById('emailSeats').value.trim();
+    const email = document.getElementById('emailAddress').value.trim();
     const contatto = document.getElementById('contatto').value.trim();
+    const source = document.getElementById('emailSource').value;
     const note = document.getElementById('emailNotes').value.trim();
     const subject = encodeURIComponent('Richiesta demo GestIA — ' + locale);
     const body = encodeURIComponent(
       'Nome: ' + nome + '\n' +
       'Locale: ' + locale + '\n' +
-      'Contatto: ' + contatto + '\n' +
+      (seats ? 'Posti a sedere: ' + seats + '\n' : '') +
+      'Email: ' + email + '\n' +
+      (contatto ? 'Telefono: ' + contatto + '\n' : '') +
+      (source ? 'Come ci ha scoperto: ' + source + '\n' : '') +
       (note ? 'Note: ' + note + '\n' : '')
     );
     window.location.href = 'mailto:info@gestialabs.com?subject=' + subject + '&body=' + body;
@@ -2664,7 +2760,10 @@
       body: JSON.stringify({
         name: document.getElementById('bookName').value.trim(),
         business: document.getElementById('bookBusiness').value.trim(),
+        seats: document.getElementById('bookSeats').value.trim(),
+        email: document.getElementById('bookEmail').value.trim(),
         contact: document.getElementById('bookContact').value.trim(),
+        source: document.getElementById('bookSource').value,
         notes: document.getElementById('bookNotes').value.trim(),
         slot: booking.selectedSlot.start
       })
