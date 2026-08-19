@@ -1921,11 +1921,11 @@
       <div class="pricing-card reveal">
         <div class="price-row">
           <div class="price-item">
-            <div class="amount">€390–690</div>
+            <div class="amount">€389,99–689,99</div>
             <div class="label">attivazione una tantum</div>
           </div>
           <div class="price-item">
-            <div class="amount">€64–199</div>
+            <div class="amount">€63,99–198,99</div>
             <div class="label">canone al mese</div>
           </div>
         </div>
@@ -1969,16 +1969,16 @@
         <div class="calc-output">
           <div class="calc-output-total">
             <span class="calc-output-total-label" id="calcTotalLabel">Totale al primo mese</span>
-            <span class="calc-output-total-value" id="calcTotal">€584</span>
+            <span class="calc-output-total-value" id="calcTotal">€583,99</span>
           </div>
 
           <div class="calc-output-line">
             <span class="calc-output-label">Attivazione una tantum</span>
-            <span class="calc-output-value" id="calcSetup">€490</span>
+            <span class="calc-output-value" id="calcSetup">€489,99</span>
           </div>
           <div class="calc-output-line">
             <span class="calc-output-label" id="calcRecurringLabel">Canone al mese</span>
-            <span class="calc-output-value" id="calcRecurring">€94</span>
+            <span class="calc-output-value" id="calcRecurring">€93,99</span>
           </div>
           <p class="calc-output-sub" id="calcSubNote"></p>
 
@@ -2143,7 +2143,7 @@
             <span class="faq-icon">+</span>
           </button>
           <div class="faq-answer">
-            <p>Canone mensile 64–199€ più un'attivazione una tantum di 390–690€, in base al numero di posti a sedere del locale. Nessun costo nascosto oltre a questo, nessuna commissione sulle prenotazioni — vedi la sezione <a href="#prezzi">Prezzi</a> per calcolare il tuo.</p>
+            <p>Canone mensile 63,99–198,99€ più un'attivazione una tantum di 389,99–689,99€, in base al numero di posti a sedere del locale. Nessun costo nascosto oltre a questo, nessuna commissione sulle prenotazioni — vedi la sezione <a href="#prezzi">Prezzi</a> per calcolare il tuo.</p>
           </div>
         </div>
       </div>
@@ -2375,7 +2375,7 @@
       <p>Il servizio viene attivato dopo una demo e la raccolta delle esigenze del Cliente (menu, orari, policy, canali). Comprende un setup iniziale una tantum e un abbonamento mensile, come descritto nella sezione Prezzi del sito.</p>
 
       <h4>3. Prezzi</h4>
-      <p>Canone mensile 64–199€ e attivazione una tantum 390–690€, in base al numero di posti a sedere del locale. Non sono previsti costi oltre a quanto concordato con il Cliente prima dell'attivazione.</p>
+      <p>Canone mensile 63,99–198,99€ e attivazione una tantum 389,99–689,99€, in base al numero di posti a sedere del locale. Non sono previsti costi oltre a quanto concordato con il Cliente prima dell'attivazione.</p>
 
       <h4>4. Durata e recesso</h4>
       <p>Le condizioni specifiche di durata, rinnovo e recesso vengono comunicate per iscritto al Cliente prima della sottoscrizione e formalizzate nel contratto tra le parti.</p>
@@ -2458,6 +2458,9 @@
   });
 
   // Calcolatore prezzi
+  function formatCharmPrice(n) {
+    return (n - 1) + ',99';
+  }
   const seatsSlider = document.getElementById('seatsSlider');
   if (seatsSlider) {
     const seatsValueEl = document.getElementById('seatsValue');
@@ -2500,7 +2503,7 @@
       const totaleMensile = base + reminder + reviews;
 
       const setup = seats <= 45 ? 390 : (seats <= 90 ? 490 : 690);
-      calcSetup.textContent = '€' + setup;
+      calcSetup.textContent = '€' + formatCharmPrice(setup);
 
       let totalDue;
       const onceNote = "L'attivazione si paga una sola volta, solo ora. ";
@@ -2510,8 +2513,8 @@
         const equivalenteMensile = Math.round(totaleAnnuale / 12);
         const risparmio = (totaleMensile * 12) - totaleAnnuale;
         calcRecurringLabel.textContent = 'Canone annuale';
-        calcRecurring.textContent = '€' + totaleAnnuale;
-        calcSubNote.textContent = onceNote + 'Il canone annuale equivale a €' + equivalenteMensile + ' al mese — risparmi €' + risparmio + ' rispetto al mensile.';
+        calcRecurring.textContent = '€' + formatCharmPrice(totaleAnnuale);
+        calcSubNote.textContent = onceNote + 'Il canone annuale equivale a €' + formatCharmPrice(equivalenteMensile) + ' al mese — risparmi €' + risparmio + ' rispetto al mensile.';
         calcTotalLabel.textContent = 'Totale alla sottoscrizione';
         totalDue = setup + totaleAnnuale;
       } else if (billingMode === 'semestral') {
@@ -2519,19 +2522,19 @@
         const equivalenteMensile = Math.round(totaleSemestrale / 6);
         const risparmio = (totaleMensile * 6) - totaleSemestrale;
         calcRecurringLabel.textContent = 'Canone semestrale';
-        calcRecurring.textContent = '€' + totaleSemestrale;
-        calcSubNote.textContent = onceNote + 'Il canone semestrale equivale a €' + equivalenteMensile + ' al mese — risparmi €' + risparmio + ' rispetto al mensile.';
+        calcRecurring.textContent = '€' + formatCharmPrice(totaleSemestrale);
+        calcSubNote.textContent = onceNote + 'Il canone semestrale equivale a €' + formatCharmPrice(equivalenteMensile) + ' al mese — risparmi €' + risparmio + ' rispetto al mensile.';
         calcTotalLabel.textContent = 'Totale alla sottoscrizione';
         totalDue = setup + totaleSemestrale;
       } else {
         calcRecurringLabel.textContent = 'Canone al mese';
-        calcRecurring.textContent = '€' + totaleMensile;
+        calcRecurring.textContent = '€' + formatCharmPrice(totaleMensile);
         calcSubNote.textContent = onceNote + 'Dal secondo mese paghi solo il canone.';
         calcTotalLabel.textContent = 'Totale al primo mese';
         totalDue = setup + totaleMensile;
       }
 
-      calcTotal.textContent = '€' + totalDue;
+      calcTotal.textContent = '€' + formatCharmPrice(totalDue);
 
       const hasOptions = reminderOn || reviewsOn;
       calcBreakdownTitle.style.display = hasOptions ? '' : 'none';
@@ -2542,7 +2545,7 @@
         if (reminderOn) items.push({ label: 'Promemoria prenotazione', value: reminder });
         if (reviewsOn) items.push({ label: 'Recensioni post-visita', value: reviews });
         calcBreakdown.innerHTML = items.map(function (i) {
-          return '<div class="calc-breakdown-line"><span>' + i.label + '</span><strong>€' + i.value + '</strong></div>';
+          return '<div class="calc-breakdown-line"><span>' + i.label + '</span><strong>€' + formatCharmPrice(i.value) + '</strong></div>';
         }).join('');
       }
     }
