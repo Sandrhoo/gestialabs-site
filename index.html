@@ -1053,6 +1053,22 @@
   }
   .calc-breakdown-line strong{color:var(--dark);font-weight:600;}
 
+  .calc-included-link{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+    margin-top:24px;
+    padding-top:20px;
+    border-top:1px solid var(--border);
+    font-weight:700;
+    font-size:15px;
+    color:var(--terracotta);
+    text-align:center;
+  }
+  .calc-included-link svg{width:16px;height:16px;transition:transform 0.25s ease;}
+  .calc-included-link:hover svg{transform:translateX(4px);}
+
   @media (max-width:640px){
     .calc-slider-label{font-size:14px;}
   }
@@ -2034,15 +2050,11 @@
           <div class="calc-breakdown-title" id="calcBreakdownTitle">Dettaglio voci (al mese)</div>
           <div class="calc-breakdown" id="calcBreakdown"></div>
         </div>
-      </div>
-    </div>
-  </section>
 
-  <!-- COSA INCLUDE L'ABBONAMENTO -->
-  <section class="section" id="incluso">
-    <div class="container">
-      <div class="section-head reveal">
-        <a href="incluso.html" class="btn btn-primary">Scopri cosa è incluso</a>
+        <a href="incluso.html" class="calc-included-link">
+          <span>Scopri cosa è incluso nell'abbonamento</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
       </div>
     </div>
   </section>

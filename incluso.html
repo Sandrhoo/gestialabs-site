@@ -1635,19 +1635,43 @@
 
   .detail-header{
     background:#FBEEDD;
-    padding:32px 24px 8px;
-    border-bottom:none;
+    padding:40px 24px 56px;
+    border-bottom:1px solid var(--border);
+  }
+  .detail-header .container{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
   }
   .back-link{
     display:inline-flex;
+    align-self:flex-start;
     align-items:center;
     gap:7px;
     font-weight:700;
     font-size:14.5px;
     color:var(--terracotta);
+    margin-bottom:32px;
   }
   .back-link svg{width:15px;height:15px;}
-  .detail-cta-wrap{text-align:center;padding:8px 24px 88px;}
+  .detail-header .section-head{margin-bottom:0;}
+
+  .detail-cta{
+    max-width:560px;
+    margin:0 auto;
+    text-align:center;
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:20px;
+    padding:36px 32px;
+    box-shadow:var(--shadow);
+  }
+  .detail-cta p{
+    color:#5A4335;
+    font-size:15.5px;
+    margin-bottom:20px;
+  }
+  .detail-cta-wrap{padding:16px 24px 96px;}
 </style>
 <script type="application/ld+json">
 {
@@ -1690,16 +1714,16 @@
   <div class="detail-header">
     <div class="container">
       <a href="index.html" class="back-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg> Torna alla home</a>
-    </div>
-  </div>
-
-  <section class="section" id="incluso">
-    <div class="container">
       <div class="section-head reveal">
         <span class="tag">Cosa include l'abbonamento</span>
         <h1>Tutto compreso, nessun extra a sorpresa</h1>
         <p>Dal giorno dell'attivazione, ecco cosa hai sempre a disposizione, senza costi extra.</p>
       </div>
+    </div>
+  </div>
+
+  <section class="section" id="incluso">
+    <div class="container">
       <div class="included-grid">
 
         <div class="included-item reveal">
@@ -1796,7 +1820,12 @@
     </div>
   </section>
   <div class="detail-cta-wrap">
-    <a href="index.html#contatti" class="btn btn-primary" data-track="demo_click">Richiedi una demo gratuita</a>
+    <div class="container">
+      <div class="detail-cta">
+        <p>Vuoi vedere GestIA in azione sul tuo locale, con menu, orari e prenotazioni configurati sul tuo caso reale?</p>
+        <a href="index.html#contatti" class="btn btn-primary" data-track="demo_click">Richiedi una demo gratuita</a>
+      </div>
+    </div>
   </div>
 </main>
 
