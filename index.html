@@ -275,13 +275,11 @@
   }
 
   /* ---------- Puntatore personalizzato ---------- */
-  body:not(.touch-device){
-    cursor:url('data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBTAA7'), none;
-  }
+  body:not(.touch-device),
   body:not(.touch-device) a,
   body:not(.touch-device) button,
   body:not(.touch-device) [role="button"]{
-    cursor:url('data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBTAA7'), none;
+    cursor:none;
   }
   #cursorDot{
     position:fixed;top:0;left:0;width:16px;height:16px;border-radius:50%;
