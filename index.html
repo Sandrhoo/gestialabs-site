@@ -274,6 +274,28 @@
     to{opacity:1;filter:blur(0);transform:scale(1) translateY(0);}
   }
 
+  /* ---------- Puntatore personalizzato ---------- */
+  body:not(.touch-device){
+    cursor:url('data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBTAA7'), none;
+  }
+  body:not(.touch-device) a,
+  body:not(.touch-device) button,
+  body:not(.touch-device) [role="button"]{
+    cursor:url('data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBTAA7'), none;
+  }
+  #cursorDot{
+    position:fixed;top:0;left:0;width:16px;height:16px;border-radius:50%;
+    background:var(--terracotta);pointer-events:none;z-index:9999;
+    transform:translate(-50%,-50%);
+    opacity:0;
+  }
+  #cursorDot.show{opacity:1;}
+  #cursorDot.hover{width:44px;height:44px;background:rgba(192,67,42,0.16);border:1.5px solid var(--terracotta);}
+  @media (hover:none){
+    #cursorDot{display:none;}
+  }
+  input, textarea, select{cursor:auto !important;}
+
   .hero-content{
     position:relative;
     z-index:1;
@@ -2919,6 +2941,34 @@
       btn.setAttribute('aria-expanded', String(!isOpen));
     });
   });
+
+  // Puntatore personalizzato: pallino terracotta che segue il mouse
+  (function () {
+    try {
+      if (window.matchMedia('(hover:none)').matches) {
+        document.body.classList.add('touch-device');
+        return;
+      }
+      const dot = document.createElement('div');
+      dot.id = 'cursorDot';
+      document.body.appendChild(dot);
+
+      document.addEventListener('mousemove', (e) => {
+        dot.style.left = e.clientX + 'px';
+        dot.style.top = e.clientY + 'px';
+        dot.classList.add('show');
+      });
+
+      // Delegazione: copre anche i bottoni creati dopo il caricamento
+      // (orari del calendario, chip "come ci hai scoperto", ecc.)
+      document.addEventListener('mouseover', (e) => {
+        if (e.target.closest('a, button, [role="button"]')) dot.classList.add('hover');
+      });
+      document.addEventListener('mouseout', (e) => {
+        if (e.target.closest('a, button, [role="button"]')) dot.classList.remove('hover');
+      });
+    } catch (err) { /* puntatore personalizzato: fallisce in silenzio, il resto del sito resta intatto */ }
+  })();
 </script>
 
 </body>
