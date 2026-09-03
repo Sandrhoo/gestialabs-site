@@ -110,9 +110,7 @@
   @media (prefers-reduced-motion: reduce){
     .reveal{opacity:1;transform:none;transition:none;}
     html{scroll-behavior:auto;}
-    .phone-mock{animation:none;}
     .brand img{animation:none;opacity:1;}
-    #heroParticles{display:none;}
   }
 
   /* ---------- Header ---------- */
@@ -2562,7 +2560,7 @@
   // Hero: sfondo a particelle che salgono
   (function () {
     const canvas = document.getElementById('heroParticles');
-    if (!canvas || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    if (!canvas) return;
     const ctx = canvas.getContext('2d');
     let w = canvas.width = canvas.offsetWidth, h = canvas.height = canvas.offsetHeight;
     window.addEventListener('resize', () => { w = canvas.width = canvas.offsetWidth; h = canvas.height = canvas.offsetHeight; });
