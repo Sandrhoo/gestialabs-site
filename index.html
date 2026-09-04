@@ -1324,6 +1324,12 @@
 
   .booking-status-success{color:var(--dark);}
 
+  .booking-status-loading{animation:statusPulse 1.4s ease-in-out infinite;}
+  @keyframes statusPulse{
+    0%,100%{opacity:1;}
+    50%{opacity:0.45;}
+  }
+
   .booking-label{
     font-size:13px;
     font-weight:600;
@@ -2172,7 +2178,7 @@
         <div class="contact-panel active" id="panelCall" role="tabpanel">
 
           <div class="booking-step" id="bookingLoading">
-            <p class="booking-status">Carico gli orari disponibili…</p>
+            <p class="booking-status booking-status-loading">Carico gli orari disponibili&hellip;</p>
           </div>
 
           <div class="booking-step" id="bookingError" hidden>
@@ -2481,6 +2487,20 @@
     const calcBreakdown = document.getElementById('calcBreakdown');
 
     let billingMode = 'monthly';
+    let prevTotalDue = null;
+
+    function animateNumber(el, from, to, prefix) {
+      const dur = 380;
+      const start = performance.now();
+      function tick(now) {
+        const p = Math.min(1, (now - start) / dur);
+        const eased = 1 - Math.pow(1 - p, 3);
+        const val = Math.round(from + (to - from) * eased);
+        el.textContent = prefix + val;
+        if (p < 1) requestAnimationFrame(tick);
+      }
+      requestAnimationFrame(tick);
+    }
 
     function updateSliderFill() {
       const min = Number(seatsSlider.min);
@@ -2534,7 +2554,12 @@
         totalDue = setup + totaleMensile;
       }
 
-      calcTotal.textContent = '€' + totalDue;
+      if (prevTotalDue === null) {
+        calcTotal.textContent = '€' + totalDue;
+      } else {
+        animateNumber(calcTotal, prevTotalDue, totalDue, '€');
+      }
+      prevTotalDue = totalDue;
 
       const hasOptions = reminderOn || reviewsOn;
       calcBreakdownTitle.style.display = hasOptions ? '' : 'none';
