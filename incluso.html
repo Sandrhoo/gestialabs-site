@@ -79,6 +79,8 @@
 
   a{color:inherit;text-decoration:none;}
 
+  ::selection{background:var(--gold);color:var(--dark);}
+
   img{max-width:100%;display:block;}
 
   .container{
@@ -87,7 +89,7 @@
     padding:0 24px;
   }
 
-  section{position:relative;}
+  section{position:relative;scroll-margin-top:90px;}
 
   /* ---------- Reveal on scroll ---------- */
   .reveal{
@@ -109,6 +111,7 @@
     .reveal{opacity:1;transform:none;transition:none;}
     html{scroll-behavior:auto;}
     .blob-1,.blob-2,.phone-mock{animation:none;}
+    .brand img{animation:none;opacity:1;}
   }
 
   /* ---------- Header ---------- */
@@ -150,6 +153,12 @@
   .brand img{
     height:36px;
     width:auto;
+    opacity:0;
+    animation:logoSettle 0.68s cubic-bezier(.19,1,.22,1) 0.1s forwards;
+  }
+  @keyframes logoSettle{
+    from{opacity:0;filter:blur(5px);transform:scale(0.965) translateY(3px);}
+    to{opacity:1;filter:blur(0);transform:scale(1) translateY(0);}
   }
 
   nav ul{
@@ -210,13 +219,14 @@
     transform:translateY(-2px);
     box-shadow:0 10px 24px rgba(192,67,42,0.35);
   }
-  .btn-primary:active{transform:translateY(0);}
+  .btn-primary:active{transform:translateY(0) scale(0.97);}
 
   .btn-ghost{
     background:transparent;
     color:var(--dark);
     border:1.5px solid var(--border);
   }
+  .btn-ghost:active{transform:translateY(0) scale(0.97);}
   .btn-ghost:hover{
     border-color:var(--terracotta);
     color:var(--terracotta);
@@ -1672,6 +1682,27 @@
     margin-bottom:20px;
   }
   .detail-cta-wrap{padding:16px 24px 96px;}
+
+  /* ---------- Puntatore personalizzato ---------- */
+  body:not(.touch-device),
+  body:not(.touch-device) a,
+  body:not(.touch-device) button,
+  body:not(.touch-device) [role="button"]{
+    cursor:none;
+  }
+  #cursorDot{
+    position:fixed;top:0;left:0;width:16px;height:16px;border-radius:50%;
+    background:var(--terracotta);pointer-events:none;z-index:9999;
+    transform:translate(-50%,-50%);
+    opacity:0;
+    box-shadow:0 0 10px 1px rgba(192,67,42,0.22), 0 0 42px 16px rgba(192,67,42,0.1);
+  }
+  #cursorDot.show{opacity:1;}
+  #cursorDot.hover{width:44px;height:44px;background:rgba(192,67,42,0.16);border:1.5px solid var(--terracotta);box-shadow:0 0 14px 2px rgba(192,67,42,0.16), 0 0 56px 20px rgba(192,67,42,0.08);}
+  @media (hover:none){
+    #cursorDot{display:none;}
+  }
+  input, textarea, select{cursor:auto !important;}
 </style>
 <script type="application/ld+json">
 {
@@ -1762,7 +1793,7 @@
           </div>
           <div>
             <h4>Aggiornamenti su menu, orari e policy</h4>
-            <p>Cambia qualcosa nel locale? Ce lo scrivi e aggiorniamo noi il bot, senza costi aggiuntivi.</p>
+            <p>Cambia qualcosa nel locale? Scrivi e aggiorniamo noi il bot, senza costi aggiuntivi.</p>
           </div>
         </div>
 
@@ -1987,6 +2018,32 @@
     'openPrivacy', 'openPrivacyFromBooking', 'openPrivacyFromEmail', 'openPrivacyFromFaq', 'openPrivacyFromTerms'
   ]);
   setupModal('termsOverlay', 'closeTerms', ['openTerms']);
+
+  // Puntatore personalizzato: pallino terracotta che segue il mouse
+  (function () {
+    try {
+      if (window.matchMedia('(hover:none)').matches) {
+        document.body.classList.add('touch-device');
+        return;
+      }
+      const dot = document.createElement('div');
+      dot.id = 'cursorDot';
+      document.body.appendChild(dot);
+
+      document.addEventListener('mousemove', (e) => {
+        dot.style.left = e.clientX + 'px';
+        dot.style.top = e.clientY + 'px';
+        dot.classList.add('show');
+      });
+
+      document.addEventListener('mouseover', (e) => {
+        if (e.target.closest('a, button, [role="button"]')) dot.classList.add('hover');
+      });
+      document.addEventListener('mouseout', (e) => {
+        if (e.target.closest('a, button, [role="button"]')) dot.classList.remove('hover');
+      });
+    } catch (err) { /* puntatore personalizzato: fallisce in silenzio, il resto della pagina resta intatto */ }
+  })();
 </script>
 
 </body>
