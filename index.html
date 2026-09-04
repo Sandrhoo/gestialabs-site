@@ -1170,6 +1170,8 @@
   }
 
   .faq-answer a, .faq-answer .consent-link{font-size:inherit;}
+  .faq-answer a{color:var(--terracotta);text-decoration:underline;text-underline-offset:2px;}
+  .faq-answer a:hover{color:#8a2f1a;}
 
   /* ---------- Contact ---------- */
   .contact-wrap{
@@ -1434,6 +1436,32 @@
   footer{
     padding:48px 24px 32px;
     border-top:1px solid var(--border);
+  }
+
+  .back-to-top{
+    position:fixed;
+    bottom:28px;
+    right:28px;
+    width:46px;
+    height:46px;
+    border-radius:50%;
+    background:var(--terracotta);
+    color:#fff;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    box-shadow:0 8px 20px rgba(192,67,42,0.3);
+    opacity:0;
+    visibility:hidden;
+    transform:translateY(10px);
+    transition:opacity 0.3s ease, transform 0.3s ease, visibility 0.3s, background 0.3s ease;
+    z-index:500;
+  }
+  .back-to-top.show{opacity:1;visibility:visible;transform:translateY(0);}
+  .back-to-top:hover{background:#a83a24;transform:translateY(-3px);}
+  .back-to-top svg{width:20px;height:20px;}
+  @media (max-width:560px){
+    .back-to-top{bottom:20px;right:20px;width:42px;height:42px;}
   }
 
   .footer-wrap{
@@ -2344,6 +2372,10 @@
 
 </main>
 
+<a href="#top" class="back-to-top" id="backToTop" aria-label="Torna in cima">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/></svg>
+</a>
+
 <footer>
   <div class="footer-wrap">
     <a href="#top" class="footer-brand">
@@ -2656,6 +2688,15 @@
       requestAnimationFrame(draw);
     }
     draw();
+  })();
+
+  // Torna in cima: compare dopo aver scrollato oltre la hero
+  (function () {
+    const btn = document.getElementById('backToTop');
+    if (!btn) return;
+    window.addEventListener('scroll', () => {
+      btn.classList.toggle('show', window.scrollY > window.innerHeight * 0.8);
+    }, { passive: true });
   })();
 
   // Scroll reveal
