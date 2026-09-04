@@ -1395,16 +1395,15 @@
   }
 
   .back-to-top{
-    position:fixed;bottom:28px;right:28px;width:42px;height:42px;border-radius:50%;
-    background:var(--cream);border:1.5px solid rgba(192,67,42,0.28);color:var(--terracotta);
-    display:flex;align-items:center;justify-content:center;
-    box-shadow:0 4px 16px rgba(58,36,24,0.09);opacity:0;visibility:hidden;transform:translateY(10px);
-    transition:opacity 0.3s ease, transform 0.3s ease, visibility 0.3s, background 0.3s ease, border-color 0.3s ease, color 0.3s ease;z-index:500;
+    position:fixed;bottom:32px;right:32px;width:36px;height:36px;
+    display:flex;align-items:center;justify-content:center;color:var(--terracotta);
+    opacity:0;visibility:hidden;transform:translateY(8px);
+    transition:opacity 0.3s ease, transform 0.3s ease, visibility 0.3s, color 0.3s ease;z-index:500;
   }
-  .back-to-top.show{opacity:1;visibility:visible;transform:translateY(0);}
-  .back-to-top:hover{background:var(--terracotta);border-color:var(--terracotta);color:#fff;transform:translateY(-3px);}
-  .back-to-top svg{width:17px;height:17px;stroke-width:2;}
-  @media (max-width:560px){.back-to-top{bottom:20px;right:20px;width:38px;height:38px;}}
+  .back-to-top.show{opacity:0.6;visibility:visible;transform:translateY(0);}
+  .back-to-top:hover{opacity:1;color:#8a2f1a;transform:translateY(-3px);}
+  .back-to-top svg{width:22px;height:22px;stroke-width:1.6;}
+  @media (max-width:560px){.back-to-top{bottom:22px;right:22px;width:32px;height:32px;}.back-to-top svg{width:20px;height:20px;}}
 
   .footer-wrap{
     max-width:1140px;
