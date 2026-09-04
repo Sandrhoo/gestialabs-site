@@ -1197,6 +1197,19 @@
 
   .form-group select{cursor:pointer;}
 
+  .form-group input::placeholder,
+  .form-group textarea::placeholder{
+    color:#B49A89;
+  }
+
+  .form-group input:-webkit-autofill,
+  .form-group input:-webkit-autofill:hover,
+  .form-group input:-webkit-autofill:focus{
+    -webkit-text-fill-color:var(--dark);
+    -webkit-box-shadow:0 0 0 1000px var(--cream) inset;
+    transition:background-color 5000s ease-in-out 0s;
+  }
+
   .form-group input:focus,
   .form-group select:focus,
   .form-group textarea:focus{
