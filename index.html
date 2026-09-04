@@ -2695,7 +2695,7 @@
     const btn = document.getElementById('backToTop');
     if (!btn) return;
     window.addEventListener('scroll', () => {
-      btn.classList.toggle('show', window.scrollY > window.innerHeight * 0.8);
+      btn.classList.toggle('show', window.scrollY > window.innerHeight * 1.6);
     }, { passive: true });
   })();
 
