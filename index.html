@@ -1341,6 +1341,22 @@
   .booking-status-success{color:var(--dark);}
 
   .booking-status-loading{animation:statusPulse 1.4s ease-in-out infinite;}
+
+  .booking-status-alert{
+    display:flex;
+    align-items:flex-start;
+    gap:8px;
+    max-width:340px;
+    width:fit-content;
+    margin:0 auto;
+    text-align:left;
+  }
+  .booking-status-alert .status-icon{
+    width:18px;height:18px;
+    margin-top:2px;
+    flex-shrink:0;
+    color:var(--terracotta);
+  }
   @keyframes statusPulse{
     0%,100%{opacity:1;}
     50%{opacity:0.45;}
@@ -2222,7 +2238,10 @@
           </div>
 
           <div class="booking-step" id="bookingError" hidden>
-            <p class="booking-status" id="bookingErrorText">Non riesco a caricare il calendario in questo momento.</p>
+            <p class="booking-status booking-status-alert">
+              <svg class="status-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9.3"/><line x1="12" y1="7.6" x2="12" y2="13"/><circle cx="12" cy="16.3" r="0.75" fill="currentColor" stroke="none"/></svg>
+              <span id="bookingErrorText">Non riesco a caricare il calendario in questo momento.</span>
+            </p>
             <p class="form-note">Scrivici via email, oppure riprova tra poco.</p>
           </div>
 
@@ -2297,7 +2316,10 @@
           </div>
 
           <div class="booking-step" id="bookingConflict" hidden>
-            <p class="booking-status">Questo orario è appena stato prenotato da qualcun altro.</p>
+            <p class="booking-status booking-status-alert">
+              <svg class="status-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9.3"/><line x1="12" y1="7.6" x2="12" y2="13"/><circle cx="12" cy="16.3" r="0.75" fill="currentColor" stroke="none"/></svg>
+              <span>Questo orario è appena stato prenotato da qualcun altro.</span>
+            </p>
             <button type="button" class="btn btn-ghost" id="bookingRetry">Scegli un altro orario</button>
           </div>
         </div>
