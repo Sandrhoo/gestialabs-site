@@ -387,21 +387,13 @@
     animation:fadeInUp 0.8s ease 0.55s forwards;
   }
 
-  .hero-trial-note{
-    margin-top:18px;
-    font-size:13.5px;
-    color:#7A6E85;
-    opacity:0;
-    animation:fadeInUp 0.8s ease 0.68s forwards;
-  }
-
   @keyframes fadeInUp{
     from{opacity:0;transform:translateY(20px);}
     to{opacity:1;transform:translateY(0);}
   }
 
   @media (prefers-reduced-motion: reduce){
-    .eyebrow,.vertical-switch,.hero h1,.hero .subtitle,.hero-ctas,.hero-trial-note{animation:none;opacity:1;}
+    .eyebrow,.vertical-switch,.hero h1,.hero .subtitle,.hero-ctas{animation:none;opacity:1;}
   }
 
   /* ---------- Section generic ---------- */
@@ -1907,7 +1899,6 @@
         <a href="#contatti" class="btn btn-primary" data-track="demo_click">Richiedi una demo gratuita</a>
         <a href="#come-funziona" class="btn btn-ghost">Scopri come funziona</a>
       </div>
-      <p class="hero-trial-note">Provalo prima di decidere: 14 giorni di prova gratuita, senza impegno.</p>
     </div>
   </section>
 
@@ -2191,8 +2182,8 @@
 
         <div class="calc-output">
           <div class="calc-output-total">
-            <span class="calc-output-total-label" id="calcRecurringLabel">Canone al mese</span>
-            <span class="calc-output-total-value" id="calcRecurring">€109</span>
+            <span class="calc-output-total-label" id="calcTotalLabel">Totale al primo mese</span>
+            <span class="calc-output-total-value" id="calcTotal">€599</span>
           </div>
 
           <div class="calc-output-line">
@@ -2200,8 +2191,8 @@
             <span class="calc-output-value" id="calcSetup">€490</span>
           </div>
           <div class="calc-output-line">
-            <span class="calc-output-label" id="calcTotalLabel">Totale al primo mese</span>
-            <span class="calc-output-value" id="calcTotal">€599</span>
+            <span class="calc-output-label" id="calcRecurringLabel">Canone al mese</span>
+            <span class="calc-output-value" id="calcRecurring">€109</span>
           </div>
           <p class="calc-output-sub" id="calcSubNote"></p>
 
