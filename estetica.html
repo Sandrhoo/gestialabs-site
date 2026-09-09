@@ -3,37 +3,37 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>GestIA — Automazioni AI per piccole attività</title>
-<meta name="description" content="GestIA: receptionist AI per la ristorazione. Prenotazioni, modifiche e domande su Telegram o WhatsApp, 24/7, con sicurezza integrata.">
-<link rel="canonical" href="https://gestialabs.com/">
+<title>GestIA — Automazioni AI per centri estetici</title>
+<meta name="description" content="GestIA: receptionist AI per centri estetici e saloni di bellezza. Appuntamenti, modifiche e domande su Telegram o WhatsApp, 24/7, con sicurezza integrata.">
+<link rel="canonical" href="https://gestialabs.com/estetica.html">
 
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
 <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-<meta name="theme-color" content="#FDF6EC">
+<meta name="theme-color" content="#FAF5F9">
 
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="GestIA">
-<meta property="og:title" content="GestIA — Automazioni AI per piccole attività">
-<meta property="og:description" content="Il receptionist AI per la ristorazione: prenotazioni, modifiche e domande su Telegram o WhatsApp, 24/7, con sicurezza integrata.">
+<meta property="og:title" content="GestIA — Automazioni AI per centri estetici">
+<meta property="og:description" content="Il receptionist AI per centri estetici e saloni di bellezza: appuntamenti, modifiche e domande su Telegram o WhatsApp, 24/7, con sicurezza integrata.">
 <meta property="og:image" content="icon-512.png">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="GestIA — Automazioni AI per piccole attività">
-<meta name="twitter:description" content="Il receptionist AI per la ristorazione: prenotazioni, modifiche e domande su Telegram o WhatsApp, 24/7, con sicurezza integrata.">
+<meta name="twitter:title" content="GestIA — Automazioni AI per centri estetici">
+<meta name="twitter:description" content="Il receptionist AI per centri estetici e saloni di bellezza: appuntamenti, modifiche e domande su Telegram o WhatsApp, 24/7, con sicurezza integrata.">
 <meta name="twitter:image" content="icon-512.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Hanken+Grotesque:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root{
-    --terracotta:#C0432A;
-    --gold:#F4A72E;
-    --cream:#FDF6EC;
-    --dark:#3A2418;
+    --prugna:#6B4E8C;
+    --lilla:#C9A9E8;
+    --cipria:#FAF5F9;
+    --inchiostro:#2A2230;
     --card:#FFFFFF;
-    --border: rgba(58,36,24,0.10);
-    --shadow: 0 10px 30px rgba(58,36,24,0.08);
-    --shadow-hover: 0 16px 40px rgba(58,36,24,0.14);
+    --border: rgba(42,34,48,0.10);
+    --shadow: 0 10px 30px rgba(42,34,48,0.08);
+    --shadow-hover: 0 16px 40px rgba(42,34,48,0.14);
   }
 
   *{margin:0;padding:0;box-sizing:border-box;}
@@ -42,7 +42,7 @@
 
   /* ---------- Accessibility: focus & skip link ---------- */
   :focus-visible{
-    outline:2.5px solid var(--terracotta);
+    outline:2.5px solid var(--prugna);
     outline-offset:3px;
     border-radius:4px;
   }
@@ -51,7 +51,7 @@
     position:absolute;
     top:-60px;
     left:16px;
-    background:var(--terracotta);
+    background:var(--prugna);
     color:#fff;
     padding:12px 20px;
     border-radius:10px;
@@ -63,36 +63,36 @@
   .skip-link:focus{top:16px;}
 
   body{
-    font-family:'Hanken Grotesque', -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-    background:var(--cream);
-    color:var(--dark);
+    font-family:'Hanken Grotesk', -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    background:var(--cipria);
+    color:var(--inchiostro);
     line-height:1.6;
     -webkit-font-smoothing:antialiased;
     overflow-x:hidden;
     scrollbar-width:thin;
-    scrollbar-color:rgba(192,67,42,0.4) transparent;
+    scrollbar-color:rgba(107,78,140,0.4) transparent;
   }
 
   ::-webkit-scrollbar{width:10px;height:10px;}
   ::-webkit-scrollbar-track{background:transparent;}
   ::-webkit-scrollbar-thumb{
-    background-color:rgba(192,67,42,0.35);
+    background-color:rgba(107,78,140,0.35);
     border-radius:999px;
-    border:2px solid var(--cream);
+    border:2px solid var(--cipria);
   }
-  ::-webkit-scrollbar-thumb:hover{background-color:rgba(192,67,42,0.55);}
+  ::-webkit-scrollbar-thumb:hover{background-color:rgba(107,78,140,0.55);}
 
   h1,h2,h3,h4{
     font-family:'Fraunces', Georgia, serif;
     font-weight:600;
     line-height:1.2;
     letter-spacing:-0.01em;
-    color:var(--dark);
+    color:var(--inchiostro);
   }
 
   a{color:inherit;text-decoration:none;}
 
-  ::selection{background:var(--gold);color:var(--dark);}
+  ::selection{background:var(--lilla);color:var(--inchiostro);}
 
   img{max-width:100%;display:block;}
 
@@ -135,16 +135,16 @@
     backdrop-filter:blur(0px);
     -webkit-backdrop-filter:blur(0px);
     border-bottom:1px solid transparent;
-    box-shadow:0 0 0 rgba(58,36,24,0);
+    box-shadow:0 0 0 rgba(42,34,48,0);
     transition:background 0.35s ease, backdrop-filter 0.35s ease, -webkit-backdrop-filter 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
   }
 
   header.scrolled{
-    background:rgba(253,246,236,0.78);
+    background:rgba(250,245,249,0.78);
     backdrop-filter:blur(14px);
     -webkit-backdrop-filter:blur(14px);
     border-bottom:1px solid var(--border);
-    box-shadow:0 8px 24px rgba(58,36,24,0.06);
+    box-shadow:0 8px 24px rgba(42,34,48,0.06);
   }
 
   .nav-wrap{
@@ -176,7 +176,7 @@
   nav a{
     font-weight:500;
     font-size:15px;
-    color:var(--dark);
+    color:var(--inchiostro);
     position:relative;
     padding:4px 0;
     transition:color 0.3s ease;
@@ -189,13 +189,13 @@
     bottom:-2px;
     width:0;
     height:2px;
-    background:var(--terracotta);
+    background:var(--prugna);
     transition:width 0.3s ease;
   }
 
-  nav a:hover{color:var(--terracotta);}
+  nav a:hover{color:var(--prugna);}
   nav a:hover::after{width:100%;}
-  nav a.nav-cross{color:#8A6A55;}
+  nav a.nav-cross{color:#7A6E85;}
 
   .nav-right{
     display:flex;
@@ -205,7 +205,7 @@
 
   .btn{
     display:inline-block;
-    font-family:'Hanken Grotesque',sans-serif;
+    font-family:'Hanken Grotesk',sans-serif;
     font-weight:600;
     font-size:15px;
     padding:13px 28px;
@@ -216,29 +216,29 @@
     white-space:nowrap;
   }
   .btn:disabled{opacity:0.55;cursor:not-allowed;transform:none;}
-  .btn-primary:disabled:hover{background:var(--terracotta);box-shadow:0 6px 18px rgba(192,67,42,0.28);}
-  .btn-ghost:disabled:hover{border-color:var(--border);color:var(--dark);}
+  .btn-primary:disabled:hover{background:var(--prugna);box-shadow:0 6px 18px rgba(107,78,140,0.28);}
+  .btn-ghost:disabled:hover{border-color:var(--border);color:var(--inchiostro);}
 
   .btn-primary{
-    background:var(--terracotta);
+    background:var(--prugna);
     color:#fff;
-    box-shadow:0 6px 18px rgba(192,67,42,0.28);
+    box-shadow:0 6px 18px rgba(107,78,140,0.28);
   }
   .btn-primary:hover{
-    background:#a83a24;
+    background:#5D4479;
     transform:translateY(-2px);
-    box-shadow:0 10px 24px rgba(192,67,42,0.35);
+    box-shadow:0 10px 24px rgba(107,78,140,0.35);
   }
   .btn-primary:active{transform:translateY(0) scale(0.97);}
 
   .btn-ghost{
     background:transparent;
-    color:var(--dark);
+    color:var(--inchiostro);
     border:1.5px solid var(--border);
   }
   .btn-ghost:hover{
-    border-color:var(--terracotta);
-    color:var(--terracotta);
+    border-color:var(--prugna);
+    color:var(--prugna);
     transform:translateY(-2px);
   }
   .btn-ghost:active{transform:translateY(0) scale(0.97);}
@@ -257,7 +257,7 @@
   .menu-toggle span{
     width:24px;
     height:2px;
-    background:var(--dark);
+    background:var(--inchiostro);
     border-radius:2px;
     transition:transform 0.3s ease, opacity 0.3s ease;
   }
@@ -299,13 +299,13 @@
   }
   #cursorDot{
     position:fixed;top:0;left:0;width:16px;height:16px;border-radius:50%;
-    background:var(--terracotta);pointer-events:none;z-index:9999;
+    background:var(--prugna);pointer-events:none;z-index:9999;
     transform:translate(-50%,-50%);
     opacity:0;
-    box-shadow:0 0 10px 1px rgba(192,67,42,0.22), 0 0 42px 16px rgba(192,67,42,0.1);
+    box-shadow:0 0 10px 1px rgba(107,78,140,0.22), 0 0 42px 16px rgba(107,78,140,0.1);
   }
   #cursorDot.show{opacity:1;}
-  #cursorDot.hover{width:44px;height:44px;background:rgba(192,67,42,0.16);border:1.5px solid var(--terracotta);box-shadow:0 0 14px 2px rgba(192,67,42,0.16), 0 0 56px 20px rgba(192,67,42,0.08);}
+  #cursorDot.hover{width:44px;height:44px;background:rgba(107,78,140,0.16);border:1.5px solid var(--prugna);box-shadow:0 0 14px 2px rgba(107,78,140,0.16), 0 0 56px 20px rgba(107,78,140,0.08);}
   @media (hover:none){
     #cursorDot{display:none;}
   }
@@ -323,8 +323,8 @@
     font-size:14px;
     font-weight:600;
     letter-spacing:0.03em;
-    color:var(--terracotta);
-    background:rgba(192,67,42,0.08);
+    color:var(--prugna);
+    background:rgba(107,78,140,0.08);
     padding:8px 18px;
     border-radius:999px;
     margin-bottom:28px;
@@ -340,18 +340,18 @@
     animation:fadeInUp 0.8s ease 0.25s forwards;
   }
 
-  .hero h1 span{color:var(--terracotta);font-style:italic;font-weight:500;}
+  .hero h1 span{color:var(--prugna);font-style:italic;font-weight:500;}
 
   .hero .subtitle{
     font-size:clamp(17px, 2vw, 20px);
-    color:var(--dark);
+    color:var(--inchiostro);
     opacity:0;
     max-width:560px;
     margin:0 auto 44px;
     animation:fadeInUp 0.8s ease 0.4s forwards;
   }
 
-  .hero .subtitle strong{color:var(--terracotta);font-weight:600;}
+  .hero .subtitle strong{color:var(--prugna);font-weight:600;}
 
   .hero-ctas{
     display:flex;
@@ -377,7 +377,7 @@
   }
 
   .section-alt{
-    background:#FBEEDD;
+    background:#F3EAF5;
   }
 
   .section-head{
@@ -392,7 +392,7 @@
     font-weight:600;
     letter-spacing:0.08em;
     text-transform:uppercase;
-    color:var(--gold-dark, #B4780F);
+    color:var(--lilla-dark, #7C4FA0);
     margin-bottom:14px;
   }
 
@@ -403,7 +403,7 @@
 
   .section-head p{
     font-size:17px;
-    color:#5A4335;
+    color:#49424E;
   }
 
   /* ---------- Problema / Soluzione ---------- */
@@ -437,7 +437,7 @@
   }
 
   .split-card p{
-    color:#5A4335;
+    color:#49424E;
     font-size:15.5px;
   }
 
@@ -465,7 +465,7 @@
     font-weight:700;
     text-transform:uppercase;
     letter-spacing:0.08em;
-    color:var(--terracotta);
+    color:var(--prugna);
     margin-bottom:14px;
   }
 
@@ -473,7 +473,7 @@
     max-width:300px;
     width:100%;
     margin:0 auto;
-    background:var(--dark);
+    background:var(--inchiostro);
     border-radius:32px;
     padding:13px 11px 18px;
     box-shadow:var(--shadow-hover);
@@ -492,7 +492,7 @@
     width:70px;
     height:6px;
     border-radius:999px;
-    background:rgba(253,246,236,0.25);
+    background:rgba(250,245,249,0.25);
     margin:0 auto 12px;
   }
 
@@ -501,14 +501,14 @@
     align-items:center;
     gap:10px;
     padding:2px 6px 14px;
-    border-bottom:1px solid rgba(253,246,236,0.12);
+    border-bottom:1px solid rgba(250,245,249,0.12);
     margin-bottom:14px;
   }
 
   .phone-avatar{
     width:34px;height:34px;
     border-radius:50%;
-    background:var(--terracotta);
+    background:var(--prugna);
     color:#fff;
     display:flex;
     align-items:center;
@@ -518,11 +518,11 @@
   .phone-avatar svg{width:18px;height:18px;}
 
   .phone-header-text{display:flex;flex-direction:column;line-height:1.3;}
-  .phone-header-text strong{color:#FDF6EC;font-size:14.5px;}
-  .phone-header-text small{color:rgba(253,246,236,0.55);font-size:12px;}
+  .phone-header-text strong{color:#FAF5F9;font-size:14.5px;}
+  .phone-header-text small{color:rgba(250,245,249,0.55);font-size:12px;}
 
   .phone-body{
-    background:var(--cream);
+    background:var(--cipria);
     border-radius:18px;
     padding:16px 12px;
     min-height:380px;
@@ -546,7 +546,7 @@
 
   .chat-bubble.customer{
     align-self:flex-end;
-    background:var(--terracotta);
+    background:var(--prugna);
     color:#fff;
     border-bottom-right-radius:4px;
   }
@@ -554,7 +554,7 @@
   .chat-bubble.bot{
     align-self:flex-start;
     background:var(--card);
-    color:var(--dark);
+    color:var(--inchiostro);
     border:1px solid var(--border);
     border-bottom-left-radius:4px;
   }
@@ -575,7 +575,7 @@
   .chat-typing span{
     width:6px;height:6px;
     border-radius:50%;
-    background:#8A6A55;
+    background:#7A6E85;
     animation:typingBounce 1.1s ease-in-out infinite;
   }
   .chat-typing span:nth-child(2){animation-delay:0.15s;}
@@ -591,21 +591,21 @@
     margin:18px auto 0;
     background:none;
     border:none;
-    font-family:'Hanken Grotesque',sans-serif;
+    font-family:'Hanken Grotesk',sans-serif;
     font-size:13px;
     font-weight:600;
-    color:#8A6A55;
+    color:#7A6E85;
     cursor:pointer;
     transition:color 0.3s ease;
   }
-  .phone-replay:hover{color:var(--terracotta);}
+  .phone-replay:hover{color:var(--prugna);}
 
   @media (prefers-reduced-motion: reduce){
     .chat-bubble, .chat-typing{transition:none;}
   }
 
-  .split-card.problema .icon-badge{background:rgba(192,67,42,0.1);color:var(--terracotta);}
-  .split-card.soluzione .icon-badge{background:rgba(244,167,46,0.16);color:#B4780F;}
+  .split-card.problema .icon-badge{background:rgba(107,78,140,0.1);color:var(--prugna);}
+  .split-card.soluzione .icon-badge{background:rgba(201,169,232,0.16);color:#7C4FA0;}
 
   /* ---------- Come funziona (timeline) ---------- */
   .timeline{
@@ -638,9 +638,9 @@
     width:48px;height:48px;
     margin:0 auto 22px;
     border-radius:50%;
-    background:var(--cream);
-    border:1.5px solid var(--terracotta);
-    color:var(--terracotta);
+    background:var(--cipria);
+    border:1.5px solid var(--prugna);
+    color:var(--prugna);
     font-family:'Fraunces',Georgia,serif;
     font-weight:700;
     font-size:18px;
@@ -650,10 +650,10 @@
     transition:background 0.3s ease, color 0.3s ease;
   }
 
-  .timeline-item:hover .timeline-marker{background:var(--terracotta);color:#fff;}
+  .timeline-item:hover .timeline-marker{background:var(--prugna);color:#fff;}
 
   .timeline-content h3{font-size:18px;margin-bottom:10px;}
-  .timeline-content p{font-size:14.5px;color:#5A4335;max-width:280px;margin:0 auto;}
+  .timeline-content p{font-size:14.5px;color:#49424E;max-width:280px;margin:0 auto;}
 
   @media (max-width:860px){
     .timeline::before{display:none;}
@@ -689,12 +689,12 @@
   .feature-card:hover{
     transform:translateY(-6px);
     box-shadow:var(--shadow-hover);
-    border-color:rgba(192,67,42,0.25);
+    border-color:rgba(107,78,140,0.25);
   }
 
   .feature-card .icon-badge{
-    background:rgba(192,67,42,0.08);
-    color:var(--terracotta);
+    background:rgba(107,78,140,0.08);
+    color:var(--prugna);
     margin-bottom:20px;
   }
 
@@ -727,8 +727,8 @@
   .included-item .icon-badge{
     width:40px;height:40px;
     border-radius:11px;
-    background:rgba(192,67,42,0.08);
-    color:var(--terracotta);
+    background:rgba(107,78,140,0.08);
+    color:var(--prugna);
     flex-shrink:0;
   }
 
@@ -741,7 +741,7 @@
 
   .included-item p{
     font-size:14px;
-    color:#5A4335;
+    color:#49424E;
     line-height:1.55;
   }
 
@@ -751,7 +751,7 @@
 
   .feature-card p{
     font-size:14.5px;
-    color:#5A4335;
+    color:#49424E;
   }
 
   /* ---------- Perché GestIA ---------- */
@@ -776,16 +776,16 @@
     font-size:14px;
     text-transform:uppercase;
     letter-spacing:0.06em;
-    color:#8A6A55;
+    color:#7A6E85;
     margin-bottom:16px;
   }
 
   .why-col.highlight{
-    background:var(--dark);
-    border-color:var(--dark);
+    background:var(--inchiostro);
+    border-color:var(--inchiostro);
   }
-  .why-col.highlight h4{color:var(--gold);}
-  .why-col.highlight p, .why-col.highlight li{color:#F4E9DD;}
+  .why-col.highlight h4{color:var(--lilla);}
+  .why-col.highlight p, .why-col.highlight li{color:#EDE3F0;}
 
   .why-col ul{
     list-style:none;
@@ -794,12 +794,12 @@
   .why-col li{
     padding:9px 0;
     font-size:15px;
-    color:#5A4335;
+    color:#49424E;
     border-bottom:1px dashed var(--border);
   }
   .why-col li:last-child{border-bottom:none;}
 
-  .why-col.highlight li{border-bottom:1px dashed rgba(244,233,221,0.15);}
+  .why-col.highlight li{border-bottom:1px dashed rgba(237,227,240,0.15);}
 
   /* ---------- Pricing ---------- */
   .pricing-card{
@@ -827,19 +827,19 @@
     font-family:'Fraunces',Georgia,serif;
     font-size:38px;
     font-weight:700;
-    color:var(--terracotta);
+    color:var(--prugna);
     font-variant-numeric:tabular-nums;
   }
 
   .price-item .label{
     font-size:14px;
-    color:#8A6A55;
+    color:#7A6E85;
     margin-top:6px;
   }
 
   .pricing-note{
     font-size:14px;
-    color:#8A6A55;
+    color:#7A6E85;
     margin-top:24px;
     padding-top:24px;
     border-top:1px solid var(--border);
@@ -865,7 +865,7 @@
     display:block;
     font-size:15px;
     font-weight:600;
-    color:var(--dark);
+    color:var(--inchiostro);
     margin-bottom:14px;
   }
 
@@ -883,20 +883,20 @@
     background:transparent;
     cursor:pointer;
     margin:0;
-    --pct:22.2%;
+    --pct:33.3%;
   }
   .calc-slider::-webkit-slider-runnable-track{
     height:6px;
     border-radius:999px;
-    background:linear-gradient(to right, var(--terracotta) 0%, var(--terracotta) var(--pct), var(--border) var(--pct), var(--border) 100%);
+    background:linear-gradient(to right, var(--prugna) 0%, var(--prugna) var(--pct), var(--border) var(--pct), var(--border) 100%);
   }
   .calc-slider::-webkit-slider-thumb{
     -webkit-appearance:none;
     width:26px;height:26px;
     border-radius:50%;
     background:#fff;
-    border:3px solid var(--terracotta);
-    box-shadow:0 2px 8px rgba(58,36,24,0.2);
+    border:3px solid var(--prugna);
+    box-shadow:0 2px 8px rgba(42,34,48,0.2);
     margin-top:-10px;
     cursor:pointer;
   }
@@ -908,25 +908,25 @@
   .calc-slider::-moz-range-progress{
     height:6px;
     border-radius:999px;
-    background:var(--terracotta);
+    background:var(--prugna);
   }
   .calc-slider::-moz-range-thumb{
     width:20px;height:20px;
     border-radius:50%;
     background:#fff;
-    border:3px solid var(--terracotta);
-    box-shadow:0 2px 8px rgba(58,36,24,0.2);
+    border:3px solid var(--prugna);
+    box-shadow:0 2px 8px rgba(42,34,48,0.2);
     cursor:pointer;
   }
   .calc-slider:focus{outline:none;}
-  .calc-slider:focus::-webkit-slider-thumb{box-shadow:0 0 0 5px rgba(192,67,42,0.15);}
-  .calc-slider:focus::-moz-range-thumb{box-shadow:0 0 0 5px rgba(192,67,42,0.15);}
+  .calc-slider:focus::-webkit-slider-thumb{box-shadow:0 0 0 5px rgba(107,78,140,0.15);}
+  .calc-slider:focus::-moz-range-thumb{box-shadow:0 0 0 5px rgba(107,78,140,0.15);}
 
   .calc-seats-value{
     font-family:'Fraunces',Georgia,serif;
     font-weight:700;
     font-size:20px;
-    color:var(--terracotta);
+    color:var(--prugna);
     font-variant-numeric:tabular-nums;
     min-width:34px;
     text-align:right;
@@ -950,13 +950,13 @@
     cursor:pointer;
     transition:border-color 0.3s ease, background 0.3s ease;
   }
-  .calc-option:hover{border-color:rgba(192,67,42,0.3);}
-  .calc-option.is-checked{border-color:var(--terracotta);background:rgba(192,67,42,0.04);}
+  .calc-option:hover{border-color:rgba(107,78,140,0.3);}
+  .calc-option.is-checked{border-color:var(--prugna);background:rgba(107,78,140,0.04);}
 
   .calc-option input[type="checkbox"]{
     width:22px;height:22px;
     margin-top:2px;
-    accent-color:var(--terracotta);
+    accent-color:var(--prugna);
     flex-shrink:0;
     cursor:pointer;
   }
@@ -964,14 +964,14 @@
   .calc-option-text strong{
     display:block;
     font-size:15px;
-    color:var(--dark);
+    color:var(--inchiostro);
     margin-bottom:3px;
   }
 
   .calc-option-text small{
     display:block;
     font-size:13px;
-    color:#5A4335;
+    color:#49424E;
     line-height:1.5;
   }
 
@@ -995,8 +995,8 @@
     margin-left:6px;
     padding:2px 8px;
     border-radius:999px;
-    background:rgba(244,167,46,0.22);
-    color:#B4780F;
+    background:rgba(201,169,232,0.22);
+    color:#7C4FA0;
     font-size:11px;
     font-weight:700;
   }
@@ -1004,7 +1004,7 @@
   .contact-tab.active .calc-badge{background:rgba(255,255,255,0.25);color:#fff;}
 
   .calc-output{
-    background:var(--cream);
+    background:var(--cipria);
     border:1px solid var(--border);
     border-radius:16px;
     padding:24px;
@@ -1023,14 +1023,14 @@
     font-weight:700;
     letter-spacing:0.04em;
     text-transform:uppercase;
-    color:#8A6A55;
+    color:#7A6E85;
     margin-bottom:6px;
   }
 
   .calc-output-total-value{
     font-family:'Fraunces',Georgia,serif;
     font-weight:700;
-    color:var(--terracotta);
+    color:var(--prugna);
     font-size:36px;
     font-variant-numeric:tabular-nums;
   }
@@ -1042,19 +1042,19 @@
     padding:5px 0;
   }
 
-  .calc-output-label{font-size:14px;color:#5A4335;}
+  .calc-output-label{font-size:14px;color:#49424E;}
 
   .calc-output-value{
     font-family:'Fraunces',Georgia,serif;
     font-weight:700;
-    color:var(--terracotta);
+    color:var(--prugna);
     font-size:19px;
     font-variant-numeric:tabular-nums;
   }
 
   .calc-output-sub{
     font-size:13px;
-    color:#8A6A55;
+    color:#7A6E85;
     margin:2px 0 0;
   }
   .calc-output-sub:empty{display:none;}
@@ -1064,7 +1064,7 @@
     font-weight:700;
     letter-spacing:0.04em;
     text-transform:uppercase;
-    color:#8A6A55;
+    color:#7A6E85;
     margin-top:18px;
     padding-top:16px;
     border-top:1px dashed var(--border);
@@ -1081,9 +1081,9 @@
     display:flex;
     justify-content:space-between;
     font-size:13.5px;
-    color:#5A4335;
+    color:#49424E;
   }
-  .calc-breakdown-line strong{color:var(--dark);font-weight:600;}
+  .calc-breakdown-line strong{color:var(--inchiostro);font-weight:600;}
 
   .calc-included-link{
     display:flex;
@@ -1095,7 +1095,7 @@
     border-top:1px solid var(--border);
     font-weight:700;
     font-size:15px;
-    color:var(--terracotta);
+    color:var(--prugna);
     text-align:center;
   }
   .calc-included-link svg{width:16px;height:16px;transition:transform 0.25s ease;}
@@ -1121,7 +1121,7 @@
     overflow:hidden;
     transition:border-color 0.3s ease, box-shadow 0.3s ease;
   }
-  .faq-item:hover{border-color:rgba(192,67,42,0.25);}
+  .faq-item:hover{border-color:rgba(107,78,140,0.25);}
 
   .faq-question{
     width:100%;
@@ -1133,10 +1133,10 @@
     background:none;
     border:none;
     text-align:left;
-    font-family:'Hanken Grotesque',sans-serif;
+    font-family:'Hanken Grotesk',sans-serif;
     font-weight:600;
     font-size:15.5px;
-    color:var(--dark);
+    color:var(--inchiostro);
     cursor:pointer;
   }
 
@@ -1144,8 +1144,8 @@
     flex-shrink:0;
     width:28px;height:28px;
     border-radius:50%;
-    background:rgba(192,67,42,0.08);
-    color:var(--terracotta);
+    background:rgba(107,78,140,0.08);
+    color:var(--prugna);
     display:flex;
     align-items:center;
     justify-content:center;
@@ -1154,7 +1154,7 @@
     transition:transform 0.3s ease, background 0.3s ease;
   }
 
-  .faq-item.open .faq-icon{transform:rotate(45deg);background:var(--terracotta);color:#fff;}
+  .faq-item.open .faq-icon{transform:rotate(45deg);background:var(--prugna);color:#fff;}
 
   .faq-answer{
     max-height:0;
@@ -1170,12 +1170,12 @@
   .faq-answer p{
     padding:0 24px;
     font-size:14.5px;
-    color:#5A4335;
+    color:#49424E;
   }
 
   .faq-answer a, .faq-answer .consent-link{font-size:inherit;}
-  .faq-answer a{color:var(--terracotta);text-decoration:underline;text-underline-offset:2px;}
-  .faq-answer a:hover{color:#8a2f1a;}
+  .faq-answer a{color:var(--prugna);text-decoration:underline;text-underline-offset:2px;}
+  .faq-answer a:hover{color:#4D3757;}
 
   /* ---------- Contact ---------- */
   .contact-wrap{
@@ -1195,7 +1195,7 @@
     font-size:14px;
     font-weight:600;
     margin-bottom:8px;
-    color:var(--dark);
+    color:var(--inchiostro);
   }
 
   .form-group input,
@@ -1205,10 +1205,10 @@
     padding:13px 16px;
     border-radius:10px;
     border:1.5px solid var(--border);
-    background:var(--cream);
-    font-family:'Hanken Grotesque',sans-serif;
+    background:var(--cipria);
+    font-family:'Hanken Grotesk',sans-serif;
     font-size:15px;
-    color:var(--dark);
+    color:var(--inchiostro);
     transition:border-color 0.3s ease, box-shadow 0.3s ease;
   }
 
@@ -1216,14 +1216,14 @@
 
   .form-group input::placeholder,
   .form-group textarea::placeholder{
-    color:#B49A89;
+    color:#B3A3B8;
   }
 
   .form-group input:-webkit-autofill,
   .form-group input:-webkit-autofill:hover,
   .form-group input:-webkit-autofill:focus{
-    -webkit-text-fill-color:var(--dark);
-    -webkit-box-shadow:0 0 0 1000px var(--cream) inset;
+    -webkit-text-fill-color:var(--inchiostro);
+    -webkit-box-shadow:0 0 0 1000px var(--cipria) inset;
     transition:background-color 5000s ease-in-out 0s;
   }
 
@@ -1231,8 +1231,8 @@
   .form-group select:focus,
   .form-group textarea:focus{
     outline:none;
-    border-color:var(--terracotta);
-    box-shadow:0 0 0 4px rgba(192,67,42,0.1);
+    border-color:var(--prugna);
+    box-shadow:0 0 0 4px rgba(107,78,140,0.1);
   }
 
   .form-group textarea{resize:vertical;min-height:90px;}
@@ -1247,18 +1247,18 @@
     padding:9px 16px;
     border-radius:999px;
     border:1.5px solid var(--border);
-    background:var(--cream);
-    font-family:'Hanken Grotesque',sans-serif;
+    background:var(--cipria);
+    font-family:'Hanken Grotesk',sans-serif;
     font-size:13.5px;
     font-weight:600;
-    color:#8A6A55;
+    color:#7A6E85;
     cursor:pointer;
     transition:background 0.3s ease, color 0.3s ease, border-color 0.3s ease;
   }
-  .chip-option:hover{border-color:rgba(192,67,42,0.35);color:var(--terracotta);}
+  .chip-option:hover{border-color:rgba(107,78,140,0.35);color:var(--prugna);}
   .chip-option.active{
-    background:var(--terracotta);
-    border-color:var(--terracotta);
+    background:var(--prugna);
+    border-color:var(--prugna);
     color:#fff;
   }
 
@@ -1266,7 +1266,7 @@
 
   .form-note{
     font-size:13px;
-    color:#8A6A55;
+    color:#7A6E85;
     text-align:center;
     margin-top:16px;
   }
@@ -1283,21 +1283,21 @@
     width:38px;height:38px;
     border-radius:50%;
     border:1.5px solid var(--border);
-    color:#8A6A55;
+    color:#7A6E85;
     display:flex;
     align-items:center;
     justify-content:center;
     text-decoration:none;
     transition:border-color 0.3s ease, color 0.3s ease;
   }
-  .social-icon:hover{border-color:var(--terracotta);color:var(--terracotta);}
+  .social-icon:hover{border-color:var(--prugna);color:var(--prugna);}
   .social-icon svg{width:17px;height:17px;}
 
   /* ---------- Contact tabs ---------- */
   .contact-tabs{
     display:flex;
     gap:8px;
-    background:var(--cream);
+    background:var(--cipria);
     border:1px solid var(--border);
     border-radius:999px;
     padding:6px;
@@ -1310,21 +1310,21 @@
     border:none;
     border-radius:999px;
     background:transparent;
-    font-family:'Hanken Grotesque',sans-serif;
+    font-family:'Hanken Grotesk',sans-serif;
     font-weight:600;
     font-size:14.5px;
-    color:#8A6A55;
+    color:#7A6E85;
     cursor:pointer;
     transition:background 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
   }
 
   .contact-tab.active{
-    background:var(--terracotta);
+    background:var(--prugna);
     color:#fff;
-    box-shadow:0 6px 16px rgba(192,67,42,0.25);
+    box-shadow:0 6px 16px rgba(107,78,140,0.25);
   }
 
-  .contact-tab:not(.active):hover{color:var(--terracotta);}
+  .contact-tab:not(.active):hover{color:var(--prugna);}
 
   .contact-panel{display:none;}
   .contact-panel.active{display:block;opacity:0;animation:fadeInUp 0.4s ease forwards;}
@@ -1334,12 +1334,12 @@
 
   .booking-status{
     font-size:15px;
-    color:#5A4335;
+    color:#49424E;
     text-align:center;
     padding:24px 0;
   }
 
-  .booking-status-success{color:var(--dark);}
+  .booking-status-success{color:var(--inchiostro);}
 
   .booking-status-loading{animation:statusPulse 1.4s ease-in-out infinite;}
 
@@ -1356,7 +1356,7 @@
     width:18px;height:18px;
     margin-top:2px;
     flex-shrink:0;
-    color:var(--terracotta);
+    color:var(--prugna);
   }
   @keyframes statusPulse{
     0%,100%{opacity:1;}
@@ -1368,7 +1368,7 @@
     font-weight:600;
     text-transform:uppercase;
     letter-spacing:0.05em;
-    color:#8A6A55;
+    color:#7A6E85;
     margin-bottom:12px;
   }
 
@@ -1391,21 +1391,21 @@
     padding:12px 22px;
     border-radius:999px;
     border:1.5px solid var(--border);
-    background:var(--cream);
-    font-family:'Hanken Grotesque',sans-serif;
+    background:var(--cipria);
+    font-family:'Hanken Grotesk',sans-serif;
     font-weight:600;
     font-size:13.5px;
-    color:var(--dark);
+    color:var(--inchiostro);
     cursor:pointer;
     white-space:nowrap;
     transition:border-color 0.3s ease, background 0.3s ease, color 0.3s ease, transform 0.3s ease;
   }
 
-  .day-chip:hover{border-color:var(--terracotta);transform:translateY(-2px);}
+  .day-chip:hover{border-color:var(--prugna);transform:translateY(-2px);}
 
   .day-chip.active{
-    background:var(--terracotta);
-    border-color:var(--terracotta);
+    background:var(--prugna);
+    border-color:var(--prugna);
     color:#fff;
   }
 
@@ -1419,23 +1419,23 @@
     padding:11px 8px;
     border-radius:10px;
     border:1.5px solid var(--border);
-    background:var(--cream);
-    font-family:'Hanken Grotesque',sans-serif;
+    background:var(--cipria);
+    font-family:'Hanken Grotesk',sans-serif;
     font-weight:600;
     font-size:14px;
-    color:var(--dark);
+    color:var(--inchiostro);
     cursor:pointer;
     transition:border-color 0.3s ease, background 0.3s ease, color 0.3s ease, transform 0.3s ease;
   }
 
-  .slot-btn:hover{border-color:var(--terracotta);color:var(--terracotta);transform:translateY(-2px);}
+  .slot-btn:hover{border-color:var(--prugna);color:var(--prugna);transform:translateY(-2px);}
 
   .booking-selected{
     font-size:15px;
     font-weight:600;
     text-align:center;
-    color:var(--terracotta);
-    background:rgba(192,67,42,0.08);
+    color:var(--prugna);
+    background:rgba(107,78,140,0.08);
     border-radius:12px;
     padding:12px;
     margin-bottom:24px;
@@ -1464,10 +1464,10 @@
     gap:8px;
     font-size:14px;
     font-weight:600;
-    color:#8A6A55;
+    color:#7A6E85;
     transition:color 0.3s ease;
   }
-  .cross-sell a:hover{color:var(--terracotta);}
+  .cross-sell a:hover{color:var(--prugna);}
   .cross-sell svg{width:15px;height:15px;transition:transform 0.25s ease;}
   .cross-sell a:hover svg{transform:translateX(3px);}
 
@@ -1486,7 +1486,7 @@
     display:flex;
     align-items:center;
     justify-content:center;
-    color:var(--terracotta);
+    color:var(--prugna);
     opacity:0;
     visibility:hidden;
     transform:translateY(8px);
@@ -1494,7 +1494,7 @@
     z-index:500;
   }
   .back-to-top.show{opacity:0.6;visibility:visible;transform:translateY(0);}
-  .back-to-top:hover{opacity:1;color:#8a2f1a;transform:translateY(-3px);}
+  .back-to-top:hover{opacity:1;color:#4D3757;transform:translateY(-3px);}
   .back-to-top svg{width:22px;height:22px;stroke-width:1.6;}
   @media (max-width:560px){
     .back-to-top{bottom:22px;right:22px;width:32px;height:32px;}
@@ -1520,16 +1520,16 @@
 
   footer .copy{
     font-size:13.5px;
-    color:#8A6A55;
+    color:#7A6E85;
   }
 
   footer a.footer-mail{
     font-size:13.5px;
-    color:var(--terracotta);
+    color:var(--prugna);
     font-weight:600;
     transition:color 0.3s ease;
   }
-  footer a.footer-mail:hover{color:#8a2f1a;}
+  footer a.footer-mail:hover{color:#4D3757;}
 
   .footer-right{
     display:flex;
@@ -1542,20 +1542,20 @@
     background:none;
     border:none;
     padding:0;
-    font-family:'Hanken Grotesque',sans-serif;
+    font-family:'Hanken Grotesk',sans-serif;
     font-size:13.5px;
     font-weight:600;
-    color:#8A6A55;
+    color:#7A6E85;
     cursor:pointer;
     transition:color 0.3s ease;
   }
-  .footer-legal-link:hover{color:var(--terracotta);}
+  .footer-legal-link:hover{color:var(--prugna);}
 
   /* ---------- Notes toggle ---------- */
   .notes-toggle{
     display:inline-flex;
     gap:6px;
-    background:var(--cream);
+    background:var(--cipria);
     border:1px solid var(--border);
     border-radius:999px;
     padding:4px;
@@ -1566,21 +1566,21 @@
     border:none;
     border-radius:999px;
     background:transparent;
-    font-family:'Hanken Grotesque',sans-serif;
+    font-family:'Hanken Grotesk',sans-serif;
     font-weight:600;
     font-size:13.5px;
-    color:#8A6A55;
+    color:#7A6E85;
     cursor:pointer;
     transition:background 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
   }
 
   .notes-toggle-btn.active{
-    background:var(--terracotta);
+    background:var(--prugna);
     color:#fff;
-    box-shadow:0 4px 12px rgba(192,67,42,0.25);
+    box-shadow:0 4px 12px rgba(107,78,140,0.25);
   }
 
-  .notes-toggle-btn:not(.active):hover{color:var(--terracotta);}
+  .notes-toggle-btn:not(.active):hover{color:var(--prugna);}
 
   .notes-field{
     max-height:0;
@@ -1601,9 +1601,9 @@
     border-radius:10px;
     border:1.5px solid var(--border);
     background:var(--card);
-    font-family:'Hanken Grotesque',sans-serif;
+    font-family:'Hanken Grotesk',sans-serif;
     font-size:14.5px;
-    color:var(--dark);
+    color:var(--inchiostro);
     resize:vertical;
     min-height:80px;
     transition:border-color 0.3s ease, box-shadow 0.3s ease;
@@ -1611,8 +1611,8 @@
 
   .notes-field textarea:focus{
     outline:none;
-    border-color:var(--terracotta);
-    box-shadow:0 0 0 4px rgba(192,67,42,0.1);
+    border-color:var(--prugna);
+    box-shadow:0 0 0 4px rgba(107,78,140,0.1);
   }
 
   /* ---------- Consent checkbox ---------- */
@@ -1623,7 +1623,7 @@
     align-items:flex-start;
     gap:10px;
     font-size:13.5px;
-    color:#5A4335;
+    color:#49424E;
     cursor:pointer;
   }
 
@@ -1631,7 +1631,7 @@
     margin-top:3px;
     width:16px;
     height:16px;
-    accent-color:var(--terracotta);
+    accent-color:var(--prugna);
     cursor:pointer;
     flex-shrink:0;
   }
@@ -1642,18 +1642,18 @@
     padding:0;
     font:inherit;
     font-weight:600;
-    color:var(--terracotta);
+    color:var(--prugna);
     text-decoration:underline;
     cursor:pointer;
     transition:color 0.3s ease;
   }
-  .consent-link:hover{color:#8a2f1a;}
+  .consent-link:hover{color:#4D3757;}
 
   /* ---------- Privacy modal ---------- */
   .modal-overlay{
     position:fixed;
     inset:0;
-    background:rgba(58,36,24,0.45);
+    background:rgba(42,34,48,0.45);
     display:flex;
     align-items:center;
     justify-content:center;
@@ -1688,20 +1688,20 @@
     height:36px;
     border-radius:50%;
     border:1px solid var(--border);
-    background:var(--cream);
+    background:var(--cipria);
     font-size:20px;
     line-height:1;
-    color:var(--dark);
+    color:var(--inchiostro);
     cursor:pointer;
     transition:background 0.3s ease, color 0.3s ease, transform 0.3s ease;
   }
-  .modal-close:hover{background:var(--terracotta);color:#fff;transform:rotate(90deg);}
+  .modal-close:hover{background:var(--prugna);color:#fff;transform:rotate(90deg);}
 
   .modal-body h3{font-size:24px;margin-bottom:20px;}
-  .modal-body h4{font-size:16px;margin:28px 0 12px;color:var(--terracotta);}
+  .modal-body h4{font-size:16px;margin:28px 0 12px;color:var(--prugna);}
   .modal-body h4:first-of-type{margin-top:0;}
-  .modal-body p{font-size:14.5px;color:#5A4335;margin-bottom:12px;}
-  .modal-body a{color:var(--terracotta);text-decoration:underline;}
+  .modal-body p{font-size:14.5px;color:#49424E;margin-bottom:12px;}
+  .modal-body a{color:var(--prugna);text-decoration:underline;}
 
   /* ---------- Responsive ---------- */
   @media (max-width:860px){
@@ -1719,7 +1719,7 @@
       left:0;
       right:0;
       flex-direction:column;
-      background:var(--cream);
+      background:var(--cipria);
       padding:24px;
       gap:20px;
       border-bottom:1px solid var(--border);
@@ -1777,7 +1777,7 @@
   "@context": "https://schema.org",
   "@type": "Organization",
   "name": "GestIA",
-  "description": "Automazioni AI per piccole attività: receptionist AI per la ristorazione, prenotazioni gestite su Telegram o WhatsApp 24/7.",
+  "description": "Automazioni AI per piccole attività: receptionist AI per centri estetici e saloni di bellezza, appuntamenti gestiti su Telegram o WhatsApp 24/7.",
   "logo": "logo.png",
   "email": "info@gestialabs.com"
 }
@@ -1792,31 +1792,31 @@
       "name": "Su quale canale funziona il bot?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Su Telegram o su WhatsApp, a tua scelta: scegliamo insieme il canale che i tuoi clienti usano già. Non serve installare nessuna app nuova, né per te né per loro."
+        "text": "Su Telegram o su WhatsApp, a tua scelta: scegliamo insieme il canale che le tue clienti usano già. Non serve installare nessuna app nuova, né per te né per loro."
       }
     },
     {
       "@type": "Question",
-      "name": "Quanto tempo serve per attivarlo sul mio locale?",
+      "name": "Quanto tempo serve per attivarlo sul mio centro?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Dipende dalla personalizzazione richiesta — menu, orari, policy, canali collegati. Dopo la demo ti diamo una stima precisa per il tuo caso."
+        "text": "Dipende dalla personalizzazione richiesta — trattamenti, durate, listino, canali collegati. Dopo la demo ti diamo una stima precisa per il tuo caso."
       }
     },
     {
       "@type": "Question",
-      "name": "I dati dei miei clienti sono al sicuro?",
+      "name": "I dati delle mie clienti sono al sicuro?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Sì. La sicurezza è integrata: un cliente non può mai vedere o modificare la prenotazione di un altro. Il trattamento dei dati segue la nostra Informativa Privacy."
+        "text": "Sì. La sicurezza è integrata: una cliente non può mai vedere o modificare l'appuntamento di un'altra. Il trattamento dei dati segue la nostra Informativa Privacy."
       }
     },
     {
       "@type": "Question",
-      "name": "Posso inserire anche le prenotazioni che arrivano per telefono?",
+      "name": "Posso inserire anche gli appuntamenti che arrivano per telefono?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Sì, hai un inserimento rapido pensato apposta per quello: in pochi secondi la prenotazione telefonica finisce nello stesso sistema di quelle gestite dal bot."
+        "text": "Sì, hai un inserimento rapido pensato apposta per quello: in pochi secondi l'appuntamento telefonico finisce nello stesso sistema di quelli gestiti dal bot."
       }
     },
     {
@@ -1824,7 +1824,7 @@
       "name": "Quanto costa davvero, tutto compreso?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Canone mensile 64–199€ più un'attivazione una tantum di 390–690€, in base al numero di posti a sedere del locale. Nessun costo nascosto oltre a questo, nessuna commissione sulle prenotazioni."
+        "text": "Canone mensile 64–199€ più un'attivazione una tantum di 390–690€, in base al numero di postazioni del centro. Nessun costo nascosto oltre a questo, nessuna commissione sugli appuntamenti."
       }
     }
   ]
@@ -1838,7 +1838,7 @@
 <header>
   <div class="nav-wrap">
     <a href="#top" class="brand">
-      <img src="logo.png" alt="GestIA">
+      <img src="logo-estetica.png" alt="GestIA">
     </a>
     <nav>
       <ul id="navList">
@@ -1846,7 +1846,7 @@
         <li><a href="#funzionalita">Funzionalità</a></li>
         <li><a href="#prezzi">Prezzi</a></li>
         <li><a href="#contatti">Contatti</a></li>
-        <li><a href="estetica.html" class="nav-cross">Hai un centro estetico?</a></li>
+        <li><a href="index.html" class="nav-cross">Hai un ristorante?</a></li>
       </ul>
     </nav>
     <div class="nav-right">
@@ -1864,8 +1864,8 @@
   <section class="hero">
     <canvas id="heroParticles" aria-hidden="true"></canvas>
     <div class="hero-content">
-      <h1>Il telefono squilla&hellip;<br><span>GestIA</span> risponde per te.</h1>
-      <p class="subtitle">Prenotazioni, modifiche e domande su Telegram o WhatsApp, 24 ore su 24 — mentre tu sei in sala.</p>
+      <h1>Hai le mani occupate&hellip;<br><span>GestIA</span> risponde per te.</h1>
+      <p class="subtitle">Appuntamenti, modifiche e domande su Telegram o WhatsApp, 24 ore su 24 — mentre tu sei con una cliente in poltrona.</p>
       <div class="hero-ctas">
         <a href="#contatti" class="btn btn-primary" data-track="demo_click">Richiedi una demo gratuita</a>
         <a href="#come-funziona" class="btn btn-ghost">Scopri come funziona</a>
@@ -1879,7 +1879,7 @@
       <div class="section-head reveal">
         <span class="tag">In azione</span>
         <h2>Due conversazioni, un solo assistente</h2>
-        <p>Un solo numero, due modi di rispondere: GestIA riconosce da solo se a scrivere è un cliente o il gestore, e adatta la conversazione a chi ha davanti.</p>
+        <p>Un solo numero, due modi di rispondere: GestIA riconosce da sola se a scrivere è una cliente o la titolare, e adatta la conversazione a chi ha davanti.</p>
       </div>
       <div class="demo-grid">
         <div class="demo-col reveal">
@@ -1896,22 +1896,22 @@
               </span>
             </div>
             <div class="phone-body" id="phoneBody1">
-              <div class="chat-bubble customer" data-seq="msg">Ciao! Avete un tavolo per 2 stasera alle 20:30?</div>
+              <div class="chat-bubble customer" data-seq="msg">Ciao! Avete un buco per una manicure venerdì pomeriggio?</div>
               <div class="chat-typing" data-seq="typing"><span></span><span></span><span></span></div>
-              <div class="chat-bubble bot" data-seq="msg">Ciao! Sì, per le 20:30 il tavolo per 2 è confermato ✅</div>
-              <div class="chat-bubble customer" data-seq="msg">Perfetto! Avete anche posti fuori?</div>
+              <div class="chat-bubble bot" data-seq="msg">Ciao! Sì, venerdì alle 15:30 ho una postazione libera ✅</div>
+              <div class="chat-bubble customer" data-seq="msg">Perfetto! Posso abbinare anche un semipermanente?</div>
               <div class="chat-typing" data-seq="typing"><span></span><span></span><span></span></div>
-              <div class="chat-bubble bot" data-seq="msg">Certo, vi mettiamo in terrazza se preferite 🌿</div>
+              <div class="chat-bubble bot" data-seq="msg">Certo, ti blocco 1h e 15 in totale 💅</div>
               <div class="chat-bubble customer" data-seq="msg">Fantastico, grazie mille!</div>
               <div class="chat-typing" data-seq="typing"><span></span><span></span><span></span></div>
-              <div class="chat-bubble bot" data-seq="msg">A stasera! 😊</div>
+              <div class="chat-bubble bot" data-seq="msg">A venerdì! 😊</div>
             </div>
             <button type="button" class="phone-replay" id="phoneReplay1">↻ Rivedi la conversazione</button>
           </div>
         </div>
 
         <div class="demo-col reveal reveal-delay-2">
-          <span class="demo-col-label">Il gestore</span>
+          <span class="demo-col-label">La titolare</span>
           <div class="phone-mock" id="phoneMock2">
             <div class="phone-notch"></div>
             <div class="phone-header">
@@ -1924,15 +1924,15 @@
               </span>
             </div>
             <div class="phone-body" id="phoneBody2">
-              <div class="chat-bubble customer" data-seq="msg">Quanti posti liberi ho stasera alle 21?</div>
+              <div class="chat-bubble customer" data-seq="msg">Quante postazioni libere ho oggi pomeriggio?</div>
               <div class="chat-typing" data-seq="typing"><span></span><span></span><span></span></div>
-              <div class="chat-bubble bot" data-seq="msg">Alle 21 hai 10 posti liberi 👍</div>
-              <div class="chat-bubble customer" data-seq="msg">Blocca tutto per stasera, evento privato</div>
+              <div class="chat-bubble bot" data-seq="msg">Oggi pomeriggio hai 2 postazioni libere 👍</div>
+              <div class="chat-bubble customer" data-seq="msg">Blocca la postazione 1 dalle 16 alle 18, corso interno</div>
               <div class="chat-typing" data-seq="typing"><span></span><span></span><span></span></div>
-              <div class="chat-bubble bot" data-seq="msg">Fatto, locale bloccato per stasera 🔒</div>
-              <div class="chat-bubble customer" data-seq="msg">Sposta la prenotazione di Marco a domani stessa ora</div>
+              <div class="chat-bubble bot" data-seq="msg">Fatto, postazione 1 bloccata dalle 16 alle 18 🔒</div>
+              <div class="chat-bubble customer" data-seq="msg">Sposta l'appuntamento di Giulia a domani stessa ora</div>
               <div class="chat-typing" data-seq="typing"><span></span><span></span><span></span></div>
-              <div class="chat-bubble bot" data-seq="msg">Aggiornato: Marco è spostato a domani alle 21 ✅</div>
+              <div class="chat-bubble bot" data-seq="msg">Aggiornato: Giulia è spostata a domani alla stessa ora ✅</div>
             </div>
             <button type="button" class="phone-replay" id="phoneReplay2">↻ Rivedi la conversazione</button>
           </div>
@@ -1954,14 +1954,14 @@
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/><line x1="2" y1="2" x2="22" y2="22"/></svg>
           </div>
           <h3>Il problema</h3>
-          <p>I piccoli locali perdono tempo e clienti gestendo le prenotazioni al telefono o a mano. Ogni chiamata persa è un cliente in meno, ogni appunto su carta è un errore in agguato.</p>
+          <p>I centri estetici perdono tempo e clienti gestendo gli appuntamenti al telefono o a mano. Ogni chiamata persa mentre hai le mani occupate è una cliente che prova altrove, ogni appunto a mente è un doppio appuntamento in agguato.</p>
         </div>
         <div class="split-card soluzione reveal reveal-delay-2">
           <div class="icon-badge">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
           </div>
           <h3>La soluzione</h3>
-          <p>Un bot AI risponde su Telegram o WhatsApp: gestisce prenotazioni, modifiche, cancellazioni e domande su orari, menu e policy, 24 ore su 24. Sicurezza integrata: un cliente non può mai toccare la prenotazione di un altro.</p>
+          <p>Un bot AI risponde su Telegram o WhatsApp: gestisce appuntamenti, modifiche, cancellazioni e domande su orari, listino e trattamenti, 24 ore su 24. Sicurezza integrata: una cliente non può mai toccare l'appuntamento di un'altra.</p>
         </div>
       </div>
     </div>
@@ -1979,21 +1979,21 @@
           <div class="timeline-marker">1</div>
           <div class="timeline-content">
             <h3>Richiedi una demo</h3>
-            <p>Prenoti una call dal calendario qui sotto, oppure ci scrivi via email: vediamo insieme il tuo locale e le tue esigenze.</p>
+            <p>Prenoti una call dal calendario qui sotto, oppure ci scrivi via email: vediamo insieme il tuo centro e le tue esigenze.</p>
           </div>
         </div>
         <div class="timeline-item reveal reveal-delay-2">
           <div class="timeline-marker">2</div>
           <div class="timeline-content">
-            <h3>Configuriamo il bot sul tuo locale</h3>
-            <p>Personalizziamo menu, orari, policy e calendario delle prenotazioni: nessuna configurazione generica, tutto su misura.</p>
+            <h3>Configuriamo il bot sul tuo centro</h3>
+            <p>Personalizziamo trattamenti, durate, postazioni, listino e calendario degli appuntamenti: nessuna configurazione generica, tutto su misura.</p>
           </div>
         </div>
         <div class="timeline-item reveal reveal-delay-4">
           <div class="timeline-marker">3</div>
           <div class="timeline-content">
             <h3>Il bot va live, tu resti al comando</h3>
-            <p>Il receptionist AI risponde ai clienti su Telegram o WhatsApp 24/7, e a te risponde da assistente: chiedi disponibilità, sposta o blocca tavoli quando vuoi.</p>
+            <p>Il receptionist AI risponde alle clienti su Telegram o WhatsApp 24/7, e a te risponde da assistente: chiedi disponibilità, sposta o blocca postazioni quando vuoi.</p>
           </div>
         </div>
       </div>
@@ -2006,56 +2006,56 @@
       <div class="section-head reveal">
         <span class="tag">Funzionalità</span>
         <h2>Tutto quello che serve, niente di superfluo</h2>
-        <p>Un unico assistente che copre l'intero ciclo della prenotazione, dal primo messaggio al giorno del servizio.</p>
+        <p>Un unico assistente che copre l'intero ciclo dell'appuntamento, dal primo messaggio al giorno del trattamento.</p>
       </div>
       <div class="features-grid">
 
         <div class="feature-card reveal">
           <div class="icon-badge">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/><path d="M9 16l2 2 4-4"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v4l3 2"/></svg>
           </div>
-          <h3>Prenotazioni complete</h3>
-          <p>Il cliente prenota in autonomia via chat, con conferma immediata e nessun tavolo doppio.</p>
+          <h3>Appuntamenti su misura per trattamento</h3>
+          <p>Manicure, colore, ceretta: ogni trattamento ha la sua durata, e GestIA calcola da sola quanto tempo serve.</p>
         </div>
 
         <div class="feature-card reveal reveal-delay-1">
           <div class="icon-badge">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4.5 8-11V5l-8-3-8 3v6c0 6.5 8 11 8 11z"/><path d="M9.5 12l1.8 1.8L14.8 10"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/><path d="M9 16l2 2 4-4"/></svg>
           </div>
-          <h3>Modifica e cancellazione sicura</h3>
-          <p>Ogni cliente può modificare o annullare solo la propria prenotazione — mai quella di altri.</p>
+          <h3>Postazioni in parallelo</h3>
+          <p>Gestisce più poltrone e operatrici insieme, senza sovrapposizioni: ogni appuntamento trova la postazione libera al momento giusto.</p>
         </div>
 
         <div class="feature-card reveal reveal-delay-2">
           <div class="icon-badge">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v4l3 2"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/><line x1="19" y1="6" x2="19" y2="10"/><line x1="17" y1="8" x2="21" y2="8"/></svg>
           </div>
-          <h3>Orari, menu e comodità</h3>
-          <p>Risponde a domande su orari, menu, parcheggio, animali ammessi e altre informazioni pratiche.</p>
+          <h3>Listino sempre a portata di chat</h3>
+          <p>La cliente chiede il prezzo di un trattamento e lo riceve subito, senza aspettare una chiamata.</p>
         </div>
 
         <div class="feature-card reveal reveal-delay-3">
           <div class="icon-badge">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><line x1="3" y1="12" x2="21" y2="12"/><path d="M12 3a13.5 13.5 0 0 1 0 18 13.5 13.5 0 0 1 0-18z"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M17 8a5 5 0 0 0-10 0c0 7-3 9-3 9h16s-3-2-3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/><path d="M4 4l1.5 1.5M20 4l-1.5 1.5"/></svg>
           </div>
-          <h3>Gestione multilingua</h3>
-          <p>Conversa con i turisti nella loro lingua, senza far perdere una prenotazione per una barriera linguistica.</p>
+          <h3>Promemoria automatico</h3>
+          <p>Un messaggio prima dell'appuntamento riduce le assenze e tiene la cliente aggiornata.</p>
         </div>
 
         <div class="feature-card reveal reveal-delay-4">
           <div class="icon-badge">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M17 8a5 5 0 0 0-10 0c0 7-3 9-3 9h16s-3-2-3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/><path d="M4 4l1.5 1.5M20 4l-1.5 1.5"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><line x1="3" y1="12" x2="21" y2="12"/><path d="M12 3a13.5 13.5 0 0 1 0 18 13.5 13.5 0 0 1 0-18z"/></svg>
           </div>
-          <h3>Modalità gestore</h3>
-          <p>Quando scrivi tu, GestIA ti riconosce e diventa il tuo assistente: disponibilità, modifiche e blocchi al volo, con riepilogo mattutino su richiesta.</p>
+          <h3>Preparazioni pre-trattamento</h3>
+          <p>Avvisa la cliente cosa serve prima: patch test per la tinta, niente ceretta il giorno prima, tempo di posa per il semipermanente.</p>
         </div>
 
         <div class="feature-card reveal reveal-delay-5">
           <div class="icon-badge">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/><line x1="19" y1="6" x2="19" y2="10"/><line x1="17" y1="8" x2="21" y2="8"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4.5 8-11V5l-8-3-8 3v6c0 6.5 8 11 8 11z"/><path d="M9.5 12l1.8 1.8L14.8 10"/></svg>
           </div>
-          <h3>Inserimento rapido</h3>
-          <p>Il gestore può inserire in pochi secondi le prenotazioni ricevute per telefono, direttamente nel sistema.</p>
+          <h3>Gestione disdette sicura</h3>
+          <p>Ogni cliente può modificare o annullare solo il proprio appuntamento — mai quello di altre.</p>
         </div>
 
       </div>
@@ -2068,7 +2068,7 @@
       <div class="section-head reveal">
         <span class="tag">Il confronto</span>
         <h2>Perché GestIA</h2>
-        <p>Non un chatbot generico: un sistema costruito su misura per ogni locale.</p>
+        <p>Non un chatbot generico: un sistema costruito su misura per ogni centro.</p>
       </div>
       <div class="why-wrap">
         <div class="why-col reveal">
@@ -2076,19 +2076,19 @@
           <ul>
             <li>Centinaia di euro al mese</li>
             <li>Configurazione standard, poco adattabile</li>
-            <li>Nessuna integrazione reale con il calendario del locale</li>
+            <li>Nessuna integrazione reale con l'agenda del centro</li>
             <li>Solo voce: bisogna rispondere a una chiamata</li>
-            <li>Pensata solo per il cliente, nessun supporto per chi gestisce il locale</li>
+            <li>Pensata solo per la cliente, nessun supporto per chi gestisce il centro</li>
           </ul>
         </div>
         <div class="why-col highlight reveal reveal-delay-2">
           <h4>GestIA</h4>
           <ul>
             <li>Costo molto più basso, pensato per piccole attività</li>
-            <li>Personalizzato sul singolo locale: menu, orari, policy</li>
-            <li>Integrazione reale con il calendario delle prenotazioni</li>
-            <li>Testo su Telegram o WhatsApp, i canali che i clienti usano già</li>
-            <li>Assistente anche per il gestore: disponibilità, blocchi e modifiche al volo</li>
+            <li>Personalizzato sul singolo centro: trattamenti, durate, listino</li>
+            <li>Integrazione reale con l'agenda degli appuntamenti</li>
+            <li>Testo su Telegram o WhatsApp, i canali che le clienti usano già</li>
+            <li>Assistente anche per la titolare: disponibilità, blocchi e modifiche al volo</li>
           </ul>
         </div>
       </div>
@@ -2114,17 +2114,17 @@
             <div class="label">canone al mese</div>
           </div>
         </div>
-        <p class="pricing-note">Il prezzo dipende solo da quanti posti hai. Nessuna commissione sulle prenotazioni: quello che incassi resta tuo.</p>
+        <p class="pricing-note">Il prezzo dipende solo da quante postazioni hai. Nessuna commissione sugli appuntamenti: quello che incassi resta tuo.</p>
       </div>
 
       <div class="pricing-card calculator-card reveal reveal-delay-1">
-        <h3 class="calc-title">Calcola il prezzo per il tuo locale</h3>
+        <h3 class="calc-title">Calcola il prezzo per il tuo centro</h3>
 
         <div class="calc-slider-block">
-          <label for="seatsSlider" class="calc-slider-label">Quanti posti a sedere ha il tuo locale?</label>
+          <label for="seatsSlider" class="calc-slider-label">Quante postazioni/operatrici ha il tuo centro?</label>
           <div class="calc-slider-row">
-            <input type="range" id="seatsSlider" class="calc-slider" min="20" max="200" step="5" value="60" aria-describedby="seatsValue">
-            <span class="calc-seats-value"><span id="seatsValue">60</span></span>
+            <input type="range" id="seatsSlider" class="calc-slider" min="1" max="10" step="1" value="4" aria-describedby="seatsValue">
+            <span class="calc-seats-value"><span id="seatsValue">4</span></span>
           </div>
         </div>
 
@@ -2132,15 +2132,15 @@
           <label class="calc-option" id="optReminderRow">
             <input type="checkbox" id="optReminder">
             <span class="calc-option-text">
-              <strong>Promemoria prenotazione</strong>
-              <small>Un messaggio WhatsApp al cliente poche ore prima, per ridurre i tavoli che non si presentano.</small>
+              <strong>Promemoria appuntamento</strong>
+              <small>Un messaggio WhatsApp alla cliente poche ore prima, per ridurre gli appuntamenti saltati.</small>
             </span>
           </label>
           <label class="calc-option" id="optReviewsRow">
             <input type="checkbox" id="optReviews">
             <span class="calc-option-text">
-              <strong>Recensioni post-visita</strong>
-              <small>Il giorno dopo chiediamo al cliente com'è andata, con il link alle tue recensioni Google.</small>
+              <strong>Recensioni post-trattamento</strong>
+              <small>Il giorno dopo chiediamo alla cliente com'è andata, con il link alle tue recensioni Google.</small>
             </span>
           </label>
         </div>
@@ -2154,7 +2154,7 @@
         <div class="calc-output">
           <div class="calc-output-total">
             <span class="calc-output-total-label" id="calcTotalLabel">Totale al primo mese</span>
-            <span class="calc-output-total-value" id="calcTotal">€584</span>
+            <span class="calc-output-total-value" id="calcTotal">€599</span>
           </div>
 
           <div class="calc-output-line">
@@ -2163,7 +2163,7 @@
           </div>
           <div class="calc-output-line">
             <span class="calc-output-label" id="calcRecurringLabel">Canone al mese</span>
-            <span class="calc-output-value" id="calcRecurring">€94</span>
+            <span class="calc-output-value" id="calcRecurring">€109</span>
           </div>
           <p class="calc-output-sub" id="calcSubNote"></p>
 
@@ -2193,34 +2193,34 @@
             <span class="faq-icon">+</span>
           </button>
           <div class="faq-answer">
-            <p>Su Telegram o su WhatsApp, a tua scelta: scegliamo insieme il canale che i tuoi clienti usano già. Non serve installare nessuna app nuova, né per te né per loro.</p>
+            <p>Su Telegram o su WhatsApp, a tua scelta: scegliamo insieme il canale che le tue clienti usano già. Non serve installare nessuna app nuova, né per te né per loro.</p>
           </div>
         </div>
         <div class="faq-item reveal">
           <button type="button" class="faq-question" aria-expanded="false">
-            <span>Quanto tempo serve per attivarlo sul mio locale?</span>
+            <span>Quanto tempo serve per attivarlo sul mio centro?</span>
             <span class="faq-icon">+</span>
           </button>
           <div class="faq-answer">
-            <p>Dipende dalla personalizzazione richiesta — menu, orari, policy, canali collegati. Dopo la demo ti diamo una stima precisa per il tuo caso.</p>
+            <p>Dipende dalla personalizzazione richiesta — trattamenti, durate, listino, canali collegati. Dopo la demo ti diamo una stima precisa per il tuo caso.</p>
           </div>
         </div>
         <div class="faq-item reveal">
           <button type="button" class="faq-question" aria-expanded="false">
-            <span>I dati dei miei clienti sono al sicuro?</span>
+            <span>I dati delle mie clienti sono al sicuro?</span>
             <span class="faq-icon">+</span>
           </button>
           <div class="faq-answer">
-            <p>Sì. La sicurezza è integrata: un cliente non può mai vedere o modificare la prenotazione di un altro. Il trattamento dei dati segue la nostra <button type="button" class="consent-link" id="openPrivacyFromFaq">Informativa Privacy</button>.</p>
+            <p>Sì. La sicurezza è integrata: una cliente non può mai vedere o modificare l'appuntamento di un'altra. Il trattamento dei dati segue la nostra <button type="button" class="consent-link" id="openPrivacyFromFaq">Informativa Privacy</button>.</p>
           </div>
         </div>
         <div class="faq-item reveal">
           <button type="button" class="faq-question" aria-expanded="false">
-            <span>Posso inserire anche le prenotazioni che arrivano per telefono?</span>
+            <span>Posso inserire anche gli appuntamenti che arrivano per telefono?</span>
             <span class="faq-icon">+</span>
           </button>
           <div class="faq-answer">
-            <p>Sì, hai un inserimento rapido pensato apposta per quello: in pochi secondi la prenotazione telefonica finisce nello stesso sistema di quelle gestite dal bot.</p>
+            <p>Sì, hai un inserimento rapido pensato apposta per quello: in pochi secondi l'appuntamento telefonico finisce nello stesso sistema di quelli gestiti dal bot.</p>
           </div>
         </div>
         <div class="faq-item reveal">
@@ -2229,7 +2229,7 @@
             <span class="faq-icon">+</span>
           </button>
           <div class="faq-answer">
-            <p>Canone mensile 64–199€ più un'attivazione una tantum di 390–690€, in base al numero di posti a sedere del locale. Nessun costo nascosto oltre a questo, nessuna commissione sulle prenotazioni — vedi la sezione <a href="#prezzi">Prezzi</a> per calcolare il tuo.</p>
+            <p>Canone mensile 64–199€ più un'attivazione una tantum di 390–690€, in base al numero di postazioni del centro. Nessun costo nascosto oltre a questo, nessuna commissione sugli appuntamenti — vedi la sezione <a href="#prezzi">Prezzi</a> per calcolare il tuo.</p>
           </div>
         </div>
       </div>
@@ -2242,7 +2242,7 @@
       <div class="section-head reveal">
         <span class="tag">Contatti</span>
         <h2>Richiedi una demo</h2>
-        <p>Prenota direttamente una call, oppure scrivici: ti contattiamo per mostrarti GestIA in azione sul tuo locale.</p>
+        <p>Prenota direttamente una call, oppure scrivici: ti contattiamo per mostrarti GestIA in azione sul tuo centro.</p>
       </div>
 
       <div class="contact-wrap reveal">
@@ -2282,12 +2282,12 @@
               <input type="text" id="bookName" name="bookName" placeholder="Il tuo nome" required minlength="2" pattern="^(?!\d+$).+$" title="Inserisci il tuo nome">
             </div>
             <div class="form-group">
-              <label for="bookBusiness">Nome del locale</label>
-              <input type="text" id="bookBusiness" name="bookBusiness" placeholder="Es. Trattoria da Mario" required minlength="2" pattern="^(?!\d+$).+$" title="Inserisci il nome del locale">
+              <label for="bookBusiness">Nome del centro</label>
+              <input type="text" id="bookBusiness" name="bookBusiness" placeholder="Es. Bellezza & Co." required minlength="2" pattern="^(?!\d+$).+$" title="Inserisci il nome del centro">
             </div>
             <div class="form-group">
-              <label for="bookSeats">Quanti posti a sedere ha il tuo locale?</label>
-              <input type="text" inputmode="numeric" id="bookSeats" name="bookSeats" placeholder="Es. 60" maxlength="3" pattern="^([1-9][0-9]|[1-4][0-9]{2}|500)$" title="Un numero tra 10 e 500">
+              <label for="bookSeats">Quante postazioni ha il tuo centro?</label>
+              <input type="text" inputmode="numeric" id="bookSeats" name="bookSeats" placeholder="Es. 4" maxlength="2" pattern="^([1-9]|[1-4][0-9]|50)$" title="Un numero tra 1 e 50">
             </div>
             <div class="form-group">
               <label for="bookEmail">Email</label>
@@ -2327,12 +2327,12 @@
             </div>
             <div class="booking-actions">
               <button type="button" class="btn btn-ghost" id="bookingBack">Indietro</button>
-              <button type="submit" class="btn btn-primary">Conferma prenotazione</button>
+              <button type="submit" class="btn btn-primary">Conferma appuntamento</button>
             </div>
           </form>
 
           <div class="booking-step" id="bookingSuccess" hidden>
-            <p class="booking-status booking-status-success">Prenotazione confermata per <strong id="bookingSuccessLabel"></strong>.</p>
+            <p class="booking-status booking-status-success">Appuntamento confermato per <strong id="bookingSuccessLabel"></strong>.</p>
             <p class="form-note">Riceverai una conferma a breve.</p>
           </div>
 
@@ -2352,12 +2352,12 @@
             <input type="text" id="nome" name="nome" placeholder="Il tuo nome" required minlength="2" pattern="^(?!\d+$).+$" title="Inserisci il tuo nome">
           </div>
           <div class="form-group">
-            <label for="locale">Nome del locale</label>
-            <input type="text" id="locale" name="locale" placeholder="Es. Trattoria da Mario" required minlength="2" pattern="^(?!\d+$).+$" title="Inserisci il nome del locale">
+            <label for="locale">Nome del centro</label>
+            <input type="text" id="locale" name="locale" placeholder="Es. Bellezza & Co." required minlength="2" pattern="^(?!\d+$).+$" title="Inserisci il nome del centro">
           </div>
           <div class="form-group">
-            <label for="emailSeats">Quanti posti a sedere ha il tuo locale?</label>
-            <input type="text" inputmode="numeric" id="emailSeats" name="emailSeats" placeholder="Es. 60" maxlength="3" pattern="^([1-9][0-9]|[1-4][0-9]{2}|500)$" title="Un numero tra 10 e 500">
+            <label for="emailSeats">Quante postazioni ha il tuo centro?</label>
+            <input type="text" inputmode="numeric" id="emailSeats" name="emailSeats" placeholder="Es. 4" maxlength="2" pattern="^([1-9]|[1-4][0-9]|50)$" title="Un numero tra 1 e 50">
           </div>
           <div class="form-group">
             <label for="emailAddress">Email</label>
@@ -2414,9 +2414,10 @@
     </div>
   </section>
 
+
   <div class="cross-sell">
     <div class="container">
-      <a href="estetica.html">Hai un centro estetico? <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+      <a href="index.html">Hai un ristorante? <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
     </div>
   </div>
 </main>
@@ -2428,7 +2429,7 @@
 <footer>
   <div class="footer-wrap">
     <a href="#top" class="footer-brand">
-      <img src="logo.png" alt="GestIA">
+      <img src="logo-estetica.png" alt="GestIA">
     </a>
     <p class="copy">&copy; 2026 GestIA. Tutti i diritti riservati.</p>
     <div class="footer-right">
@@ -2457,7 +2458,7 @@
       <h4>Cookie Policy</h4>
       <p>Questo sito non utilizza cookie di profilazione o di tracciamento pubblicitario, e non installa alcun cookie, proprio o di terze parti.</p>
       <p>Per capire quante persone visitano il sito, viene inviato in forma anonima e aggregata il conteggio delle visite e dei click sul pulsante "Richiedi una demo" a un sistema interno di automazione — senza cookie, senza indirizzo IP salvato, senza alcun identificativo che renda riconoscibile il visitatore.</p>
-      <p>Per la visualizzazione dei font (Fraunces, Hanken Grotesque) il sito carica risorse da Google Fonts (fonts.googleapis.com / fonts.gstatic.com): questo comporta una richiesta ai server di Google, che può implicare il trattamento dell'indirizzo IP secondo la <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">privacy policy di Google</a>.</p>
+      <p>Per la visualizzazione dei font (Fraunces, Hanken Grotesk) il sito carica risorse da Google Fonts (fonts.googleapis.com / fonts.gstatic.com): questo comporta una richiesta ai server di Google, che può implicare il trattamento dell'indirizzo IP secondo la <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">privacy policy di Google</a>.</p>
       <p class="form-note">Non essendo utilizzati cookie non essenziali, non è necessario un banner di consenso. Se in futuro verranno introdotti strumenti di analytics o marketing basati su cookie, questa informativa sarà aggiornata e verrà richiesto un consenso esplicito.</p>
     </div>
   </div>
@@ -2470,13 +2471,13 @@
       <h3 id="termsModalTitle">Termini di Servizio</h3>
 
       <h4>1. Oggetto</h4>
-      <p>GestIA fornisce un assistente AI per la gestione delle prenotazioni, raggiungibile via Telegram o WhatsApp, configurato su misura per il locale del cliente ("il Cliente").</p>
+      <p>GestIA fornisce un assistente AI per la gestione degli appuntamenti, raggiungibile via Telegram o WhatsApp, configurato su misura per il centro del cliente ("il Cliente").</p>
 
       <h4>2. Attivazione del servizio</h4>
       <p>Il servizio viene attivato dopo una demo e la raccolta delle esigenze del Cliente (menu, orari, policy, canali). Comprende un setup iniziale una tantum e un abbonamento mensile, come descritto nella sezione Prezzi del sito.</p>
 
       <h4>3. Prezzi</h4>
-      <p>Canone mensile 64–199€ e attivazione una tantum 390–690€, in base al numero di posti a sedere del locale. Non sono previsti costi oltre a quanto concordato con il Cliente prima dell'attivazione.</p>
+      <p>Canone mensile 64–199€ e attivazione una tantum 390–690€, in base al numero di postazioni del centro. Non sono previsti costi oltre a quanto concordato con il Cliente prima dell'attivazione.</p>
 
       <h4>4. Durata e recesso</h4>
       <p>Le condizioni specifiche di durata, rinnovo e recesso vengono comunicate per iscritto al Cliente prima della sottoscrizione e formalizzate nel contratto tra le parti.</p>
@@ -2603,18 +2604,18 @@
     }
 
     function recomputePricing() {
-      const seats = Number(seatsSlider.value);
-      seatsValueEl.textContent = seats;
+      const postazioni = Number(seatsSlider.value);
+      seatsValueEl.textContent = postazioni;
       updateSliderFill();
 
-      const base = Math.round(49 + 0.75 * seats);
+      const base = Math.round(49 + 15 * postazioni);
       const reminderOn = optReminder.checked;
       const reviewsOn = optReviews.checked;
-      const reminder = reminderOn ? Math.round(12 + 0.20 * seats) : 0;
-      const reviews = reviewsOn ? Math.round(19 + 0.27 * seats) : 0;
+      const reminder = reminderOn ? Math.round(12 + 4 * postazioni) : 0;
+      const reviews = reviewsOn ? Math.round(19 + 5.4 * postazioni) : 0;
       const totaleMensile = base + reminder + reviews;
 
-      const setup = seats <= 45 ? 390 : (seats <= 90 ? 490 : 690);
+      const setup = postazioni <= 2 ? 390 : (postazioni <= 5 ? 490 : 690);
       calcSetup.textContent = '€' + setup;
 
       let totalDue;
@@ -2658,9 +2659,9 @@
       calcBreakdown.style.display = hasOptions ? '' : 'none';
 
       if (hasOptions) {
-        const items = [{ label: 'Base (' + seats + ' posti)', value: base }];
-        if (reminderOn) items.push({ label: 'Promemoria prenotazione', value: reminder });
-        if (reviewsOn) items.push({ label: 'Recensioni post-visita', value: reviews });
+        const items = [{ label: 'Base (' + postazioni + ' postazioni)', value: base }];
+        if (reminderOn) items.push({ label: 'Promemoria appuntamento', value: reminder });
+        if (reviewsOn) items.push({ label: 'Recensioni post-trattamento', value: reviews });
         calcBreakdown.innerHTML = items.map(function (i) {
           return '<div class="calc-breakdown-line"><span>' + i.label + '</span><strong>€' + i.value + '</strong></div>';
         }).join('');
@@ -2712,7 +2713,7 @@
         drift: (Math.random() - 0.5) * 0.08,
         life: 0,
         maxLife: 400 + Math.random() * 300,
-        hue: Math.random() < 0.75 ? 'terracotta' : 'gold',
+        hue: Math.random() < 0.75 ? 'prugna' : 'lilla',
       };
     }
     const particles = Array.from({ length: N }, () => spawn());
@@ -2728,7 +2729,7 @@
         const alpha = Math.max(0, Math.min(1, fade)) * 0.55;
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-        ctx.fillStyle = p.hue === 'terracotta' ? `rgba(192,67,42,${alpha})` : `rgba(244,167,46,${alpha})`;
+        ctx.fillStyle = p.hue === 'prugna' ? `rgba(107,78,140,${alpha})` : `rgba(201,169,232,${alpha})`;
         ctx.fill();
         if (p.y < -10 || p.life > p.maxLife) {
           Object.assign(p, spawn(false), { y: h + 10, life: 0 });
@@ -2792,11 +2793,11 @@
     const contatto = document.getElementById('contatto').value.trim();
     const source = document.getElementById('emailSource').value;
     const note = document.getElementById('emailNotes').value.trim();
-    const subject = encodeURIComponent('Richiesta demo GestIA — ' + locale);
+    const subject = encodeURIComponent('Richiesta demo GestIA (estetica) — ' + locale);
     const body = encodeURIComponent(
       'Nome: ' + nome + '\n' +
-      'Locale: ' + locale + '\n' +
-      (seats ? 'Posti a sedere: ' + seats + '\n' : '') +
+      'Centro: ' + locale + '\n' +
+      (seats ? 'Postazioni: ' + seats + '\n' : '') +
       'Email: ' + email + '\n' +
       (contatto ? 'Telefono: ' + contatto + '\n' : '') +
       (source ? 'Come ci ha scoperto: ' + source + '\n' : '') +
@@ -2938,13 +2939,14 @@
         contact: document.getElementById('bookContact').value.trim(),
         source: document.getElementById('bookSource').value,
         notes: document.getElementById('bookNotes').value.trim(),
-        slot: booking.selectedSlot.start
+        slot: booking.selectedSlot.start,
+        settore: 'estetica'
       })
     })
       .then((res) => res.json().then((data) => ({ ok: res.ok, data: data })))
       .then(({ ok, data }) => {
         submitBtn.disabled = false;
-        submitBtn.textContent = 'Conferma prenotazione';
+        submitBtn.textContent = 'Conferma appuntamento';
         if (ok && data && data.success) {
           document.getElementById('bookingSuccessLabel').textContent = booking.selectedSlot.label;
           showBookingStep(bookingSuccess);
@@ -2957,7 +2959,7 @@
       })
       .catch(() => {
         submitBtn.disabled = false;
-        submitBtn.textContent = 'Conferma prenotazione';
+        submitBtn.textContent = 'Conferma appuntamento';
         bookingErrorText.textContent = 'Non riesco a completare la prenotazione. Riprova tra poco.';
         showBookingStep(bookingErrorEl);
       });
@@ -3086,7 +3088,7 @@
     });
   });
 
-  // Puntatore personalizzato: pallino terracotta che segue il mouse
+  // Puntatore personalizzato: pallino prugna che segue il mouse
   (function () {
     try {
       if (window.matchMedia('(hover:none)').matches) {

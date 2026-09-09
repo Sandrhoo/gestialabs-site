@@ -200,6 +200,7 @@
 
   nav a:hover{color:var(--terracotta);}
   nav a:hover::after{width:100%;}
+  nav a.nav-cross{color:#8A6A55;}
 
   .nav-right{
     display:flex;
@@ -1407,6 +1408,25 @@
   #bookingError .btn, #bookingConflict .btn{display:block;margin:16px auto 0;}
   #bookingError, #bookingConflict{text-align:center;}
 
+  /* ---------- Cross-sell: altro verticale ---------- */
+  .cross-sell{
+    padding:28px 24px;
+    text-align:center;
+    border-top:1px solid var(--border);
+  }
+  .cross-sell a{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    font-size:14px;
+    font-weight:600;
+    color:#8A6A55;
+    transition:color 0.3s ease;
+  }
+  .cross-sell a:hover{color:var(--terracotta);}
+  .cross-sell svg{width:15px;height:15px;transition:transform 0.25s ease;}
+  .cross-sell a:hover svg{transform:translateX(3px);}
+
   /* ---------- Footer ---------- */
   footer{
     padding:48px 24px 32px;
@@ -1773,6 +1793,7 @@
         <li><a href="index.html#funzionalita">Funzionalità</a></li>
         <li><a href="index.html#prezzi">Prezzi</a></li>
         <li><a href="index.html#contatti">Contatti</a></li>
+        <li><a href="estetica.html" class="nav-cross">Hai un centro estetico?</a></li>
       </ul>
     </nav>
     <div class="nav-right">
@@ -1899,6 +1920,12 @@
         <p>Vuoi vedere GestIA in azione sul tuo locale, con menu, orari e prenotazioni configurati sul tuo caso reale?</p>
         <a href="index.html#contatti" class="btn btn-primary" data-track="demo_click">Richiedi una demo gratuita</a>
       </div>
+    </div>
+  </div>
+
+  <div class="cross-sell">
+    <div class="container">
+      <a href="estetica.html">Hai un centro estetico? <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
     </div>
   </div>
 </main>
