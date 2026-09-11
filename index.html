@@ -243,6 +243,22 @@
   }
   .btn-ghost:active{transform:translateY(0) scale(0.97);}
 
+  .btn-whatsapp{
+    background:#fff;
+    color:var(--dark);
+    border:1.5px solid var(--border);
+    display:inline-flex;
+    align-items:center;
+    gap:9px;
+  }
+  .btn-whatsapp svg{width:19px;height:19px;flex-shrink:0;color:#25D366;}
+  .btn-whatsapp:hover{
+    border-color:#25D366;
+    color:#128C3E;
+    transform:translateY(-2px);
+  }
+  .btn-whatsapp:active{transform:translateY(0) scale(0.97);}
+
   .btn-small{padding:10px 22px;font-size:14px;}
 
   .menu-toggle{
@@ -387,13 +403,21 @@
     animation:fadeInUp 0.8s ease 0.55s forwards;
   }
 
+  .hero-try-now{
+    display:flex;
+    justify-content:center;
+    margin-top:16px;
+    opacity:0;
+    animation:fadeInUp 0.8s ease 0.65s forwards;
+  }
+
   @keyframes fadeInUp{
     from{opacity:0;transform:translateY(20px);}
     to{opacity:1;transform:translateY(0);}
   }
 
   @media (prefers-reduced-motion: reduce){
-    .eyebrow,.vertical-switch,.hero h1,.hero .subtitle,.hero-ctas{animation:none;opacity:1;}
+    .eyebrow,.vertical-switch,.hero h1,.hero .subtitle,.hero-ctas,.hero-try-now{animation:none;opacity:1;}
   }
 
   /* ---------- Section generic ---------- */
@@ -1898,6 +1922,12 @@
       <div class="hero-ctas">
         <a href="#contatti" class="btn btn-primary" data-track="demo_click">Richiedi una demo gratuita</a>
         <a href="#come-funziona" class="btn btn-ghost">Scopri come funziona</a>
+      </div>
+      <div class="hero-try-now">
+        <a href="https://wa.me/393505718510?text=Ciao%21%20Avete%20un%20tavolo%20per%202%20stasera%20alle%2020%3A30%3F" class="btn btn-whatsapp" target="_blank" rel="noopener noreferrer" data-track="whatsapp_try_click">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21 5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2zm5.71 14.16c-.24.68-1.4 1.3-1.93 1.34-.49.04-1.11.06-1.79-.11-.41-.11-.94-.3-1.62-.59-2.85-1.23-4.71-4.1-4.85-4.29-.14-.19-1.16-1.55-1.16-2.96 0-1.41.74-2.1 1-2.39.26-.29.57-.36.76-.36.19 0 .38 0 .55.01.18.01.42-.07.65.5.24.58.82 2 .89 2.14.07.14.12.31.02.5-.09.19-.14.31-.28.48-.14.17-.29.37-.42.5-.14.14-.28.29-.12.57.16.28.71 1.17 1.52 1.9 1.05.94 1.93 1.23 2.21 1.37.28.14.44.12.6-.07.16-.19.68-.79.86-1.06.18-.27.36-.22.6-.13.24.09 1.53.72 1.79.85.26.13.43.19.5.3.07.11.07.63-.17 1.31z"/></svg>
+          Prova ora su WhatsApp
+        </a>
       </div>
     </div>
   </section>
