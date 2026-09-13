@@ -1873,7 +1873,7 @@
       "name": "Quanto costa davvero, tutto compreso?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Canone mensile 64–199€ più un contributo spese una tantum di 99€. Nessun costo nascosto oltre a questo, nessuna commissione sugli appuntamenti."
+        "text": "Canone mensile 64–199€ più un costo di attivazione una tantum di 99€. Nessun costo nascosto oltre a questo, nessuna commissione sugli appuntamenti."
       }
     }
   ]
@@ -2166,7 +2166,7 @@
         <div class="price-row">
           <div class="price-item">
             <div class="amount">€99</div>
-            <div class="label">contributo spese</div>
+            <div class="label">costo di attivazione</div>
           </div>
           <div class="price-item">
             <div class="amount">€64–199</div>
@@ -2217,7 +2217,7 @@
           </div>
 
           <div class="calc-output-line">
-            <span class="calc-output-label">Contributo spese</span>
+            <span class="calc-output-label">Costo di attivazione</span>
             <span class="calc-output-value" id="calcSetup">€99</span>
           </div>
           <div class="calc-output-line">
@@ -2288,7 +2288,7 @@
             <span class="faq-icon">+</span>
           </button>
           <div class="faq-answer">
-            <p>Canone mensile 64–199€ più un contributo spese una tantum di 99€. Nessun costo nascosto oltre a questo, nessuna commissione sugli appuntamenti — vedi la sezione <a href="#prezzi">Prezzi</a> per calcolare il tuo.</p>
+            <p>Canone mensile 64–199€ più un costo di attivazione una tantum di 99€. Nessun costo nascosto oltre a questo, nessuna commissione sugli appuntamenti — vedi la sezione <a href="#prezzi">Prezzi</a> per calcolare il tuo.</p>
           </div>
         </div>
       </div>
@@ -2533,10 +2533,10 @@
       <p>GestIA fornisce un assistente AI per la gestione degli appuntamenti, raggiungibile via Telegram o WhatsApp, configurato su misura per il centro del cliente ("il Cliente").</p>
 
       <h4>2. Attivazione del servizio</h4>
-      <p>Il servizio viene attivato dopo una demo e la raccolta delle esigenze del Cliente (menu, orari, policy, canali). Comprende un contributo spese una tantum e un abbonamento mensile, come descritto nella sezione Prezzi del sito.</p>
+      <p>Il servizio viene attivato dopo una demo e la raccolta delle esigenze del Cliente (menu, orari, policy, canali). Comprende un costo di attivazione una tantum e un abbonamento mensile, come descritto nella sezione Prezzi del sito.</p>
 
       <h4>3. Prezzi</h4>
-      <p>Canone mensile 64–199€ e contributo spese una tantum di 99€. Non sono previsti costi oltre a quanto concordato con il Cliente prima dell'attivazione.</p>
+      <p>Canone mensile 64–199€ e costo di attivazione una tantum di 99€. Non sono previsti costi oltre a quanto concordato con il Cliente prima dell'attivazione.</p>
 
       <h4>4. Durata e recesso</h4>
       <p>Le condizioni specifiche di durata, rinnovo e recesso vengono comunicate per iscritto al Cliente prima della sottoscrizione e formalizzate nel contratto tra le parti.</p>
@@ -2678,7 +2678,7 @@
       calcSetup.textContent = '€' + setup;
 
       let totalDue;
-      const onceNote = "Il contributo spese si paga una sola volta, solo ora. ";
+      const onceNote = "Il costo di attivazione si paga una sola volta, solo ora. ";
 
       if (billingMode === 'yearly') {
         const totaleAnnuale = totaleMensile * 10;
