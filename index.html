@@ -747,6 +747,50 @@
     margin-bottom:20px;
   }
 
+  /* ---------- NFC cross-sell banner ---------- */
+  .nfc-banner{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:32px;
+    max-width:1000px;
+    margin:0 auto;
+    padding:36px 40px;
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:20px;
+    box-shadow:var(--shadow);
+  }
+
+  .nfc-banner-text{
+    display:flex;
+    align-items:center;
+    gap:20px;
+  }
+
+  .nfc-banner .icon-badge{
+    background:rgba(244,167,46,0.18);
+    color:#B4780F;
+    flex-shrink:0;
+  }
+
+  .nfc-banner h3{
+    font-size:19px;
+    margin-bottom:4px;
+  }
+
+  .nfc-banner p{
+    font-size:14.5px;
+    color:#5A4335;
+  }
+
+  .nfc-banner .btn{flex-shrink:0;}
+
+  @media (max-width:720px){
+    .nfc-banner{flex-direction:column;text-align:center;padding:32px 24px;}
+    .nfc-banner-text{flex-direction:column;}
+  }
+
   .feature-card h3{
     font-size:18px;
     margin-bottom:10px;
@@ -2291,6 +2335,24 @@
             <p>Canone mensile 64–199€ più un costo di attivazione una tantum di 99€. Nessun costo nascosto oltre a questo, nessuna commissione sulle prenotazioni — vedi la sezione <a href="#prezzi">Prezzi</a> per calcolare il tuo.</p>
           </div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NFC CROSS-SELL -->
+  <section class="section section-alt" id="nfc-tags">
+    <div class="container">
+      <div class="nfc-banner reveal">
+        <div class="nfc-banner-text">
+          <div class="icon-badge">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M8 12a4 4 0 0 1 4-4"/><path d="M8 12a4 4 0 0 0 4 4"/><path d="M4 12a8 8 0 0 1 8-8"/><path d="M4 12a8 8 0 0 0 8 8"/><circle cx="12" cy="12" r="1" fill="currentColor"/></svg>
+          </div>
+          <div>
+            <h3>Scopri i nostri tag NFC</h3>
+            <p>Un tap dello smartphone e il cliente lascia una recensione su Google, Instagram o Facebook. Nessuna app, nessuna configurazione.</p>
+          </div>
+        </div>
+        <a href="https://nfc.gestialabs.com" class="btn btn-primary" target="_blank" rel="noopener noreferrer" data-track="nfc_store_click">Vai allo store</a>
       </div>
     </div>
   </section>
