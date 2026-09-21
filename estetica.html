@@ -411,13 +411,26 @@
     animation:fadeInUp 0.8s ease 0.65s forwards;
   }
 
+  .hero-nfc-hint{
+    display:flex;
+    justify-content:center;
+    margin-top:18px;
+    font-size:13.5px;
+    font-weight:600;
+    color:var(--lilla-dark, #7C4FA0);
+    opacity:0;
+    animation:fadeInUp 0.8s ease 0.75s forwards;
+    transition:color 0.3s ease;
+  }
+  .hero-nfc-hint:hover{color:var(--prugna);}
+
   @keyframes fadeInUp{
     from{opacity:0;transform:translateY(20px);}
     to{opacity:1;transform:translateY(0);}
   }
 
   @media (prefers-reduced-motion: reduce){
-    .eyebrow,.vertical-switch,.hero h1,.hero .subtitle,.hero-ctas,.hero-try-now{animation:none;opacity:1;}
+    .eyebrow,.vertical-switch,.hero h1,.hero .subtitle,.hero-ctas,.hero-try-now,.hero-nfc-hint{animation:none;opacity:1;}
   }
 
   /* ---------- Section generic ---------- */
@@ -1797,6 +1810,19 @@
   .modal-body a{color:var(--prugna);text-decoration:underline;}
 
   /* ---------- Responsive ---------- */
+  @media (max-width:1060px){
+    nav ul{gap:20px;}
+  }
+
+  @media (max-width:960px){
+    nav ul{gap:16px;}
+    nav a{font-size:14px;white-space:nowrap;}
+  }
+
+  @media (max-width:960px) and (min-width:721px){
+    .nav-cross{display:none;}
+  }
+
   @media (max-width:860px){
     .split{grid-template-columns:1fr;gap:24px;}
     .features-grid{grid-template-columns:repeat(2, 1fr);}
@@ -1938,6 +1964,7 @@
         <li><a href="#come-funziona">Come funziona</a></li>
         <li><a href="#funzionalita">Funzionalità</a></li>
         <li><a href="#prezzi">Prezzi</a></li>
+        <li><a href="#nfc-tags">Tag NFC</a></li>
         <li><a href="#contatti">Contatti</a></li>
         <li><a href="index.html" class="nav-cross">Hai un ristorante?</a></li>
       </ul>
@@ -1973,6 +2000,7 @@
           Prova ora su WhatsApp
         </a>
       </div>
+      <a href="https://nfc.gestialabs.com" class="hero-nfc-hint" target="_blank" rel="noopener noreferrer" data-track="nfc_store_click">🏷️ Scopri il nostro store di tag NFC →</a>
     </div>
   </section>
 
